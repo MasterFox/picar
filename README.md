@@ -1,4 +1,4 @@
 picar
 =====
 
-Control your old RC-car with a Raspberry Pi running PiCar OS.
+Control your radio-controlled car with some Python and Ryanteck Motor Controller Board!
