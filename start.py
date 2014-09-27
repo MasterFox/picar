@@ -15,3 +15,5 @@ def stop()
 	GPIO.output(22,0)
 	GPIO.output(23,0)
 
+def forward():
+	pass
