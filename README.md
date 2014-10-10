@@ -9,7 +9,7 @@ Setup
 1. Clone the repository to your own RasPi or unpack the archive.
 2. Install and wire the motors of your RC-car with the Ryanteck MCB and plug it on your RasPi
 3. Move to the "picar"-directory and execute start.py
-4. Report every bug to me!
+4. Report every bug to me! picar.infoandbugs@gmail.com
 
 PiCar 0.01alpha
 ===============
