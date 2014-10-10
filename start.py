@@ -20,7 +20,7 @@ GPIO.setup(m1a,GPIO.OUT) #Set 17 as output (Motor 1 A)
 GPIO.setup(m1b,GPIO.OUT) #Set 18 as output (Motor 1 B)
 GPIO.setup(m2a,GPIO.OUT) #Set 22 as output (Motor 2 A)
 GPIO.setup(m2b,GPIO.OUT) #Set 23 as output (Motor 2 B)
-print("Ended without any errors")
+print("Successful setup of GPIO pins")
 
 #Start selftest
 GPIO.output(m1a, True)
@@ -38,5 +38,5 @@ sleep(1)
 GPIO.output(m2b, True)
 sleep(1)
 GPIO.output(m2b, False)
-
+print("Ended selftest without any errors")
 
