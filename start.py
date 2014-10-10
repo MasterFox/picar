@@ -22,23 +22,28 @@ GPIO.setup(m2a,GPIO.OUT) #Set 22 as output (Motor 2 A)
 GPIO.setup(m2b,GPIO.OUT) #Set 23 as output (Motor 2 B)
 print("Successful setup of GPIO pins")
 
-#Start selftest
-GPIO.output(m1a, True)#forwards
-sleep(1)
-GPIO.output(m1a, False)
-sleep(1)
-GPIO.output(m1b, True)#backwards
-sleep(1)
-GPIO.output(m1b, False)
-sleep(1)
-GPIO.output(m2a, True)#left
-sleep(1)
-GPIO.output(m2a, False)
-sleep(1)
-GPIO.output(m2b, True)#right
-sleep(1)
-GPIO.output(m2b, False)
-print("Ended selftest without any errors")
+#Define basic selftest
+def selftest():
+	print("Forwards")
+	GPIO.output(m1a, True)
+	sleep(1)
+	GPIO.output(m1a, False)
+	sleep(1)
+	print("Backwards")
+	GPIO.output(m1b, True)
+	sleep(1)
+	GPIO.output(m1b, False)
+	sleep(1)
+	print("Left")
+	GPIO.output(m2a, True)
+	sleep(1)
+	GPIO.output(m2a, False)
+	sleep(1)
+	print("Right")
+	GPIO.output(m2b, True)
+	sleep(1)
+	GPIO.output(m2b, False)
+	print("Ended selftest without any errors")
 
 #Define functions
 def forwards():
@@ -100,8 +105,11 @@ while command != "quit":
 	if command == "left backwards":
 		leftbackwards()
 		command = raw_input("?")
+	if command == "selftest":
+		selftest()
+		command = raw_input("?")
 	else:
-		print("Invalid input")
+		print("Invalid input, try again")
 		command = raw_input("?")
 
 print("Program ended successfully")
