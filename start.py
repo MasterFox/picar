@@ -22,6 +22,8 @@ GPIO.setup(m2a,GPIO.OUT) #Set 22 as output (Motor 2 A)
 GPIO.setup(m2b,GPIO.OUT) #Set 23 as output (Motor 2 B)
 print("Successful setup of GPIO pins")
 
+print("PiCar 0.021alpha - Contributed by Leon Schwarze under GNU-GPL Version 2 license")
+
 #Define basic selftest
 def selftest():
 	print("Forwards")
@@ -82,7 +84,17 @@ def leftbackwards():
 	GPIO.output(m2a, True)
 	sleep(1)
 	GPIO.output(m1b, False)
-	GPIO.output(m2a, False)		
+	GPIO.output(m2a, False)	
+
+def help()
+	print("forwards - move your car forwards")
+	print("backwards - move your car backwards")
+	print("left forwards - move your car left forwards")
+	print("right forwards - move your car right forwards")
+	print("For turning backwards use the same pattern with backwards")
+	print("selftest - for testing the correct wiring of your car")
+	print("help - show this overview")
+	print("quit - quit the application")	
 
 #Open command interface
 command = raw_input("?")
@@ -107,6 +119,9 @@ while command != "quit":
 		command = raw_input("?")
 	if command == "selftest":
 		selftest()
+		command = raw_input("?")
+	if command == "help":
+		help()
 		command = raw_input("?")
 	else:
 		print("Invalid input, try again")
