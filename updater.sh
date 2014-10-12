@@ -3,18 +3,19 @@ echo "Updater for PiCar - Ver. 0.01alpha"
 echo "Please ensure that you are connected to the internet."
 sleep 2
 #Create update directory
-mkdir ~/update
-cd ~/update
+cd ~
+#rm -R ~/picar_newest
+#mkdir ~/picar_newest
+#cd ~/picar_newest
 #Download update file
-wget -N https://github.com/LinuxMaya123/picar/releases/download/0.01alpha/picar_newest.tar.gz
+wget -N https://github.com/LinuxMaya123/picar/releases/download/0.02alpha/picar_newest.tar.gz
 echo "Update successfully downloaded."
 echo "Unpacking update..."
-tar -xzf picar*.tar.gz 
+tar -xzf picar_newest.tar.gz 
 echo "Installing update..."
-mkdir ~/picar_newest
-mv ~/update/picar2/* ~/picar_newest
+sleep 1
 #Cleaning up
-rm -R ~/update
+rm -R picar*.tar.gz
 echo "Update successfully installed."
 #Doing some adverstising :)
 echo "Please report every bug to picar.infoandbugs@gmail.com."
