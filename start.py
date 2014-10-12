@@ -1,5 +1,5 @@
 #PiCar Selftest
-#Licensed under the GNU GPL V3 License
+#Licensed under the GNU GPL V2 License
 #(C) Leon Schwarze
 #Adapted from Ryanteck LTD.
 from time import sleep #We will need to sleep the code at points
