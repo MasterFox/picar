@@ -24,6 +24,11 @@ After starting the program, you can use the following commands:
 + quit - quit the application
 + help - show command overview
 
+PiCar 0.021alpha
+================
+
++ Fixed bug #121020141714
+
 PiCar 0.02alpha
 ===============
 
