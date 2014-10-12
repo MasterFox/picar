@@ -1,5 +1,5 @@
-PiCar 0.01alpha
-===============
+PiCar 0.021alpha
+================
 
 Control your radio-controlled car with some Python and Ryanteck Motor Controller Board!
 
@@ -23,6 +23,11 @@ After starting the program, you can use the following commands:
 + selftest - for checking the functionality of every motor
 + quit - quit the application
 + help - show command overview
+
+PiCar 0.021alpha
+================
+
++ Fixed bug #121020141714
 
 PiCar 0.02alpha
 ===============
