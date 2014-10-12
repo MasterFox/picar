@@ -27,6 +27,11 @@ After starting the program, you can use the following commands:
 PiCar 0.02alpha
 ===============
 
++ Added updater/installer
++ Removed the selftest at the program's beginning
++ Added command "help" for showing a short command overview
++ Added command "selftest" for testing your wiring
+
 
 PiCar 0.01alpha
 ===============
