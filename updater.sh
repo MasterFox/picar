@@ -8,7 +8,7 @@ cd ~
 #mkdir ~/picar_newest
 #cd ~/picar_newest
 #Download update file
-wget -N https://github.com/LinuxMaya123/picar/releases/download/0.02alpha/picar_newest.tar.gz
+wget -N https://github.com/LinuxMaya123/picar/releases/download/0.021alpha/picar_newest.tar.gz
 echo "Update successfully downloaded."
 echo "Unpacking update..."
 tar -xzf picar_newest.tar.gz 
