@@ -86,7 +86,7 @@ def leftbackwards():
 	GPIO.output(m1b, False)
 	GPIO.output(m2a, False)	
 
-def help()
+def help():
 	print("forwards - move your car forwards")
 	print("backwards - move your car backwards")
 	print("left forwards - move your car left forwards")
