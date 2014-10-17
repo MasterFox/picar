@@ -1,6 +1,6 @@
 #!/bin/bash
-echo "Updater for PiCar - Ver. 0.01alpha"
-echo "Please ensure that you are connected to the internet."
+echo "Updater for PiCar - Ver. 0.02alpha"
+echo "Starting updating process..."
 sleep 2
 #Create update directory
 cd ~
@@ -11,7 +11,7 @@ cd ~
 wget -N https://github.com/LinuxMaya123/picar/releases/download/0.021alpha/picar_newest.tar.gz
 echo "Update successfully downloaded."
 echo "Unpacking update..."
-tar -xzf picar_newest.tar.gz 
+tar -xzf picar_newest.tar.gz
 echo "Installing update..."
 sleep 1
 #Cleaning up
@@ -20,4 +20,3 @@ echo "Update successfully installed."
 #Doing some adverstising :)
 echo "Please report every bug to picar.infoandbugs@gmail.com."
 echo "Follow us on Twitter @picar_os!"
-
