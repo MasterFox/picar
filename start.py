@@ -1,5 +1,5 @@
 #PiCar Selftest
-#Licensed under the GNU GPL V3 License
+#Licensed under the GNU GPL V2 License
 #(C) Leon Schwarze
 #Adapted from Ryanteck LTD.
 from time import sleep #We will need to sleep the code at points
@@ -91,7 +91,7 @@ def leftbackwards():
 	GPIO.output(m1b, False)
 	GPIO.output(m2a, False)
 
-def help()
+def help():
 	print("forwards - move your car forwards")
 	print("backwards - move your car backwards")
 	print("left forwards - move your car left forwards")
