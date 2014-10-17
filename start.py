@@ -5,6 +5,9 @@
 from time import sleep #We will need to sleep the code at points
 import RPi.GPIO as GPIO #Import the GPIO library as GPIO
 
+print("PiCar 0.03alpha - Contributed by Leon Schwarze under GNU-GPL Version 2 license")
+print("Welcome")
+print("Setting up GPIO pins")
 #Setup GPIO
 GPIO.setmode(GPIO.BCM) # Set the numbers to Broadcom Mode
 GPIO.setwarnings(False) # Ignore any errors
@@ -14,15 +17,17 @@ m1a = 17
 m1b = 18
 m2a = 22
 m2b = 23
+lighting = 24
 
 #Setup the outputs
 GPIO.setup(m1a,GPIO.OUT) #Set 17 as output (Motor 1 A)
 GPIO.setup(m1b,GPIO.OUT) #Set 18 as output (Motor 1 B)
 GPIO.setup(m2a,GPIO.OUT) #Set 22 as output (Motor 2 A)
 GPIO.setup(m2b,GPIO.OUT) #Set 23 as output (Motor 2 B)
+GPIO.setup(lighting, GPIO.OUT)
 print("Successful setup of GPIO pins")
-
-print("PiCar 0.021alpha - Contributed by Leon Schwarze under GNU-GPL Version 2 license")
+print("Starting lighting engine LumiX")
+GPIO.output(lighting, True)
 
 #Define basic selftest
 def selftest():
@@ -70,21 +75,21 @@ def rightforwards():
 	GPIO.output(m2b, True)
 	sleep(1)
 	GPIO.output(m1a, False)
-	GPIO.output(m2b, False)	
+	GPIO.output(m2b, False)
 
 def rightbackwards():
 	GPIO.output(m1b, True)
 	GPIO.output(m2b, True)
 	sleep(1)
 	GPIO.output(m1b, False)
-	GPIO.output(m2b, False)	
+	GPIO.output(m2b, False)
 
 def leftbackwards():
 	GPIO.output(m1b, True)
 	GPIO.output(m2a, True)
 	sleep(1)
 	GPIO.output(m1b, False)
-	GPIO.output(m2a, False)	
+	GPIO.output(m2a, False)
 
 def help()
 	print("forwards - move your car forwards")
@@ -94,7 +99,7 @@ def help()
 	print("For turning backwards use the same pattern with backwards")
 	print("selftest - for testing the correct wiring of your car")
 	print("help - show this overview")
-	print("quit - quit the application")	
+	print("quit - quit the application")
 
 #Open command interface
 command = raw_input("?")
@@ -109,7 +114,7 @@ while command != "quit":
 		leftforwards()
 		command = raw_input("?")
 	if command == "right forwards":
-		rightforwards()	
+		rightforwards()
 		command = raw_input("?")
 	if command == "right backwards":
 		rightbackwards()
@@ -128,4 +133,3 @@ while command != "quit":
 		command = raw_input("?")
 
 print("Program ended successfully")
-
