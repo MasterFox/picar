@@ -8,7 +8,7 @@ Setup
 
 1. Download the archive and execute updater.sh
 2. Install and wire the motors of your RC-car with the Ryanteck MCB and plug it on your RasPi.
-3. Connect lighting (if available) to pin 24.
+3. Connect lighting (if available) to pin 24 and GROUND.
 4. Move to the "picar"-directory and execute start.py as root.
 5. Type "selftest" to check the correct wiring of your motors and if needed change the wiring.
 6. Report every bug to me! picar.infoandbugs@gmail.com
