@@ -20,16 +20,17 @@ print("Setting up GPIO pins")
 
 #Setup GPIO
 GPIO.setmode(GPIO.BCM) #Set the pin numbers to Broadcom Mode
-#Check if started in debug mode
-if startarg:
-	if sys.argv[1] == "--debug":
-		GPIO.setwarnings(True) #Show all errors
+#Check if started in debug mode (will be include later; buggy!)
+#if startarg:
+#	if sys.argv[1] == "--debug":
+#		GPIO.setwarnings(True) #Show all errors
 	#if sys.argv[2] == "--debug":
 	#	GPIO.setwarnings(True)
-	else:
-		GPIO.setwarnings(False) #Ignore any errors
-else:
-	pass
+#	else:
+#		GPIO.setwarnings(False) #Ignore any errors
+#else:
+#	pass
+
 #Assign variables to pins
 motor1_a = 17
 motor1_b = 18
@@ -45,15 +46,15 @@ GPIO.setup(motor2_b,GPIO.OUT) #Set 23 as output (Motor 2 B)
 GPIO.setup(lighting, GPIO.OUT)
 print("Successful setup of GPIO pins")
 
-#Check if started in stealth mode
-if startarg:
-	if sys.argv[1] == "--stealth":
-		print("Successful started in stealth-mode. WARNING: Visual feedback is not possible in stealth mode!")
-	else:
-		print("Starting lighting engine LumiX")
-		GPIO.output(lighting, True)
-else:
-	pass
+#Check if started in stealth mode (will be included later; buggy!)
+#if startarg:
+#	if sys.argv[1] == "--stealth":
+#		print("Successful started in stealth-mode. WARNING: Visual feedback is not possible in stealth mode!")
+#	else:
+#		print("Starting lighting engine LumiX")
+#		GPIO.output(lighting, True)
+#else:
+#	pass
 #Define basic selftest
 def selftest():
 	print("Forwards")
