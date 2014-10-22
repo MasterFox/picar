@@ -30,7 +30,7 @@ GPIO.setmode(GPIO.BCM) #Set the pin numbers to Broadcom Mode
 #		GPIO.setwarnings(False) #Ignore any errors
 #else:
 #	pass
-
+GPIO.setwarnings(False)
 #Assign variables to pins
 motor1_a = 17
 motor1_b = 18
