@@ -35,7 +35,7 @@ GPIO.setup(lighting, GPIO.OUT)
 print("Successful setup of GPIO pins")
 
 #check if started in stealth mode
-if sys.argvs == "--stealth":
+if sys.argv == "--stealth":
 	print("Successful started in stealth-mode. WARNING: Visual feedback is not possible in stealth mode!")
 else:
 	print("Starting lighting engine LumiX")
