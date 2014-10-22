@@ -32,7 +32,7 @@ GPIO.setup(motor1_b,GPIO.OUT) #Set 18 as output (Motor 1 B)
 GPIO.setup(motor2_a,GPIO.OUT) #Set 22 as output (Motor 2 A)
 GPIO.setup(motor2_b,GPIO.OUT) #Set 23 as output (Motor 2 B)
 GPIO.setup(lighting, GPIO.OUT)
-if general_argument == "stealth":
+if general_argument == "--stealth":
 	print("Successful started in stealth-mode. WARNING: Visual feedback is not possible in stealth mode!")
 else:
 	print("Successful setup of GPIO pins")
