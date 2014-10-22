@@ -16,8 +16,14 @@ print("Welcome")
 print("Setting up GPIO pins")
 
 #Setup GPIO
-GPIO.setmode(GPIO.BCM) # Set the numbers to Broadcom Mode
-GPIO.setwarnings(False) # Ignore any errors
+GPIO.setmode(GPIO.BCM) #Set the pin numbers to Broadcom Mode
+#Check if started in debug mode
+if sys.argv[1] == "--debug":
+	GPIO.setwarnings(True) #Show all errors
+if sys.argv[2] == "--debug":
+	GPIO.setwarnings(True)
+else:
+	GPIO.setwarnings(False) #Ignore any errors
 
 #Assign variables to pins
 motor1_a = 17
@@ -34,7 +40,7 @@ GPIO.setup(motor2_b,GPIO.OUT) #Set 23 as output (Motor 2 B)
 GPIO.setup(lighting, GPIO.OUT)
 print("Successful setup of GPIO pins")
 
-#check if started in stealth mode
+#Check if started in stealth mode
 if sys.argv[1] == "--stealth":
 	print("Successful started in stealth-mode. WARNING: Visual feedback is not possible in stealth mode!")
 else:
