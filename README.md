@@ -17,6 +17,7 @@ Setup
 5. Type "selftest" to check the correct wiring of your motors and if needed change the wiring.
 6. Report every bug to me! picar.infoandbugs@gmail.com
 7. To enable the experimental features remove the '#' before the code parts marked as experimental. USAGE AT YOUR OWN RISK!
+
 Usage
 =====
 
