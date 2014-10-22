@@ -1,95 +1,105 @@
-#PiCar Selftest
+#!/usr/bin/python
+__author__ = 'Leon Schwarze'
 #Licensed under the GNU GPL V2 License
 #(C) Leon Schwarze
 #Adapted from Ryanteck LTD.
-from time import sleep #We will need to sleep the code at points
-import RPi.GPIO as GPIO #Import the GPIO library as GPIO
+
+#importing some very important stuff
+from time import sleep
+import RPi.GPIO as GPIO
+import sys
+
+general_argument = sys.argv
 
 print("PiCar 0.03alpha - Contributed by Leon Schwarze under GNU-GPL Version 2 license")
 print("Welcome")
 print("Setting up GPIO pins")
+
 #Setup GPIO
 GPIO.setmode(GPIO.BCM) # Set the numbers to Broadcom Mode
 GPIO.setwarnings(False) # Ignore any errors
 
 #Assign variables to pins
-m1a = 17
-m1b = 18
-m2a = 22
-m2b = 23
+motor1_a = 17
+motor1_b = 18
+motor2_a = 22
+motor2_b = 23
 lighting = 24
 
 #Setup the outputs
-GPIO.setup(m1a,GPIO.OUT) #Set 17 as output (Motor 1 A)
-GPIO.setup(m1b,GPIO.OUT) #Set 18 as output (Motor 1 B)
-GPIO.setup(m2a,GPIO.OUT) #Set 22 as output (Motor 2 A)
-GPIO.setup(m2b,GPIO.OUT) #Set 23 as output (Motor 2 B)
+GPIO.setup(motor1_a,GPIO.OUT) #Set 17 as output (Motor 1 A)
+GPIO.setup(motor1_b,GPIO.OUT) #Set 18 as output (Motor 1 B)
+GPIO.setup(motor2_a,GPIO.OUT) #Set 22 as output (Motor 2 A)
+GPIO.setup(motor2_b,GPIO.OUT) #Set 23 as output (Motor 2 B)
 GPIO.setup(lighting, GPIO.OUT)
-print("Successful setup of GPIO pins")
-print("Starting lighting engine LumiX")
-GPIO.output(lighting, True)
+if general_argument == "stealth":
+	print("Successful started in stealth-mode. WARNING: Visual feedback is not possible in stealth mode!")
+else:
+	print("Successful setup of GPIO pins")
+	print("Starting lighting engine LumiX")
+	GPIO.output(lighting, True)
 
 #Define basic selftest
 def selftest():
 	print("Forwards")
-	GPIO.output(m1a, True)
+	GPIO.output(motor1_a, True)
 	sleep(1)
-	GPIO.output(m1a, False)
+	GPIO.output(motor1_a, False)
 	sleep(1)
 	print("Backwards")
-	GPIO.output(m1b, True)
+	GPIO.output(motor1_b, True)
 	sleep(1)
-	GPIO.output(m1b, False)
+	GPIO.output(motor1_b, False)
 	sleep(1)
 	print("Left")
-	GPIO.output(m2a, True)
+	GPIO.output(motor2_a, True)
 	sleep(1)
-	GPIO.output(m2a, False)
+	GPIO.output(motor2_a, False)
 	sleep(1)
 	print("Right")
-	GPIO.output(m2b, True)
+	GPIO.output(motor2_b, True)
 	sleep(1)
-	GPIO.output(m2b, False)
+	GPIO.output(motor2_b, False)
 	print("Ended selftest without any errors")
 
 #Define functions
 def forwards():
-	GPIO.output(m1a, True)
+	GPIO.output(motor1_a, True)
 	sleep(1)
-	GPIO.output(m1a, False)
+	GPIO.output(motor1_a, False)
 
 def backwards():
-	GPIO.output(m1b, True)
+	GPIO.output(motor1_b, True)
 	sleep(1)
-	GPIO.output(m1b, False)
+	GPIO.output(motor1_b, False)
 
 def leftforwards():
-	GPIO.output(m1a, True)
-	GPIO.output(m2a, True)
+	GPIO.output(motor1_a, True)
+	GPIO.output(motor2_a, True)
 	sleep(1)
-	GPIO.output(m1a, False)
-	GPIO.output(m2a, False)
+	GPIO.output(motor1_a, False)
+	GPIO.output(motor2_a, False)
 
 def rightforwards():
-	GPIO.output(m1a, True)
-	GPIO.output(m2b, True)
+	GPIO.output(motor1_a, True)
+	GPIO.output(motor2_b, True)
 	sleep(1)
-	GPIO.output(m1a, False)
-	GPIO.output(m2b, False)
+	GPIO.output(motor1_a, False)
+	GPIO.output(motor2_b, False)
 
 def rightbackwards():
-	GPIO.output(m1b, True)
-	GPIO.output(m2b, True)
+	GPIO.output(motor1_b, True)
+	GPIO.output(motor2_b, True)
 	sleep(1)
-	GPIO.output(m1b, False)
-	GPIO.output(m2b, False)
+	GPIO.output(motor1_b, False)
+	GPIO.output(motor2_b, False)
 
 def leftbackwards():
-	GPIO.output(m1b, True)
-	GPIO.output(m2a, True)
+	GPIO.output(motor1_b, True)
+	GPIO.output(motor2_a, True)
 	sleep(1)
-	GPIO.output(m1b, False)
-	GPIO.output(m2a, False)
+	GPIO.output(motor1_b, False)
+	GPIO.output(motor2_a, False)
 
 def help():
 	print("forwards - move your car forwards")
