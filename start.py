@@ -20,8 +20,8 @@ GPIO.setmode(GPIO.BCM) #Set the pin numbers to Broadcom Mode
 #Check if started in debug mode
 if sys.argv[1] == "--debug":
 	GPIO.setwarnings(True) #Show all errors
-if sys.argv[2] == "--debug":
-	GPIO.setwarnings(True)
+#if sys.argv[2] == "--debug":
+#	GPIO.setwarnings(True)
 else:
 	GPIO.setwarnings(False) #Ignore any errors
 
