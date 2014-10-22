@@ -14,12 +14,13 @@ if sys.argv is None:
 else:
 	startarg = True
 
-print("PiCar 0.03alpha - Contributed by Leon Schwarze under GNU-GPL Version 2 license")
+print("PiCar 0.04alpha - Contributed by Leon Schwarze under GNU-GPL Version 2 license")
 print("Welcome")
 print("Setting up GPIO pins")
 
 #Setup GPIO
 GPIO.setmode(GPIO.BCM) #Set the pin numbers to Broadcom Mode
+
 #Check if started in debug mode (will be include later; buggy!)
 #if startarg:
 #	if sys.argv[1] == "--debug":
@@ -30,6 +31,7 @@ GPIO.setmode(GPIO.BCM) #Set the pin numbers to Broadcom Mode
 #		GPIO.setwarnings(False) #Ignore any errors
 #else:
 #	pass
+
 GPIO.setwarnings(False)
 #Assign variables to pins
 motor1_a = 17
@@ -55,6 +57,7 @@ print("Successful setup of GPIO pins")
 #		GPIO.output(lighting, True)
 #else:
 #	pass
+
 #Define basic selftest
 def selftest():
 	print("Forwards")
