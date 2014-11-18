@@ -146,6 +146,7 @@ def navix():
 	GPIO.output(usonic_trig, False)
 	while GPIO.input(usonic_echo)==0:
   	pulse_start = time.time()
+  	
 	while GPIO.input(usonic_echo)==1:
  	pulse_end = time.time()
 
