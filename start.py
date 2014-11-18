@@ -79,7 +79,7 @@ def selftest():
 	time.sleep(1)
 	GPIO.output(motor2_a, False)
 	time.sleep(1)
-	print("Right")s
+	print("Right")
 	GPIO.output(motor2_b, True)
 	time.sleep(1)
 	GPIO.output(motor2_b, False)
