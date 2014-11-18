@@ -85,7 +85,7 @@ def selftest():
 	GPIO.output(motor2_b, False)
 	sleep(1)
 	navix()
-	print distance
+	print navix_distance
 	print("Ended selftest without any errors")
 
 
@@ -157,7 +157,7 @@ def navix():
 
 	distance = round(distance, 2)
 
-	distance = global distance
+	global navix_distance = distance
 
 
 #Open command interface
