@@ -14,7 +14,7 @@ if sys.argv is None:
 else:
 	startarg = True
 
-print("PiCar 0.04alpha - Contributed by Leon Schwarze under GNU-GPL Version 2 license")
+print("PiCar 0.01beta - Contributed by Leon Schwarze under GNU-GPL Version 2 license")
 print("Welcome")
 print("Setting up GPIO pins")
 
@@ -39,13 +39,17 @@ motor1_b = 18
 motor2_a = 22
 motor2_b = 23
 lighting = 24
+usonic_trig = 25
+usonic_echo = 27
 
 #Setup the outputs
 GPIO.setup(motor1_a,GPIO.OUT) #Set 17 as output (Motor 1 A)
 GPIO.setup(motor1_b,GPIO.OUT) #Set 18 as output (Motor 1 B)
 GPIO.setup(motor2_a,GPIO.OUT) #Set 22 as output (Motor 2 A)
 GPIO.setup(motor2_b,GPIO.OUT) #Set 23 as output (Motor 2 B)
-GPIO.setup(lighting, GPIO.OUT)
+GPIO.setup(lighting, GPIO.OUT) #Set up lighting output
+GPIO.setup(usonic_trig, GPIO.OUT)
+GPIO.setup(usonic_echo, GPIO.IN)
 print("Successful setup of GPIO pins")
 
 #Check if started in stealth mode (will be included later; buggy!)
@@ -79,7 +83,11 @@ def selftest():
 	GPIO.output(motor2_b, True)
 	sleep(1)
 	GPIO.output(motor2_b, False)
+	sleep(1)
+	navix()
+	print distance
 	print("Ended selftest without any errors")
+
 
 #Define functions
 def forwards():
@@ -129,6 +137,26 @@ def help():
 	print("selftest - for testing the correct wiring of your car")
 	print("help - show this overview")
 	print("quit - quit the application")
+
+def navix():
+	GPIO.output(usonic_trig, False)
+	time.sleep(2)
+	GPIO.output(usonic_trig, True)
+	time.sleep(0.00001)
+	GPIO.output(usonic_trig, False)
+	while GPIO.input(usonic_echo)==0:
+  	pulse_start = time.time()
+	while GPIO.input(usonic_echo)==1:
+ 	pulse_end = time.time()
+
+ 	pulse_duration = pulse_end - pulse_start
+
+	distance = pulse_duration * 17150
+
+	distance = round(distance, 2)
+
+	distance = global distance
+
 
 #Open command interface
 command = raw_input("?")
