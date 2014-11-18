@@ -157,7 +157,8 @@ def navix():
 
 	distance = round(distance, 2)
 
-	global navix_distance = distance
+	global navix_distance 
+	navix_distance = distance
 
 
 #Open command interface
