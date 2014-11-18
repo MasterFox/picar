@@ -5,7 +5,7 @@ __author__ = 'Leon Schwarze'
 #Adapted from Ryanteck LTD.
 
 #importing some very important stuff
-from time import sleep
+import time
 import RPi.GPIO as GPIO
 import sys
 
@@ -66,24 +66,24 @@ print("Successful setup of GPIO pins")
 def selftest():
 	print("Forwards")
 	GPIO.output(motor1_a, True)
-	sleep(1)
+	time.sleep(1)
 	GPIO.output(motor1_a, False)
-	sleep(1)
+	time.sleep(1)
 	print("Backwards")
 	GPIO.output(motor1_b, True)
-	sleep(1)
+	time.sleep(1)
 	GPIO.output(motor1_b, False)
-	sleep(1)
+	time.sleep(1)
 	print("Left")
 	GPIO.output(motor2_a, True)
-	sleep(1)
+	time.sleep(1)
 	GPIO.output(motor2_a, False)
-	sleep(1)
-	print("Right")
+	time.sleep(1)
+	print("Right")s
 	GPIO.output(motor2_b, True)
-	sleep(1)
+	time.sleep(1)
 	GPIO.output(motor2_b, False)
-	sleep(1)
+	time.sleep(1)
 	navix()
 	print navix_distance
 	print("Ended selftest without any errors")
@@ -92,39 +92,39 @@ def selftest():
 #Define functions
 def forwards():
 	GPIO.output(motor1_a, True)
-	sleep(1)
+	time.sleep(1)
 	GPIO.output(motor1_a, False)
 
 def backwards():
 	GPIO.output(motor1_b, True)
-	sleep(1)
+	time.sleep(1)
 	GPIO.output(motor1_b, False)
 
 def leftforwards():
 	GPIO.output(motor1_a, True)
 	GPIO.output(motor2_a, True)
-	sleep(1)
+	time.sleep(1)
 	GPIO.output(motor1_a, False)
 	GPIO.output(motor2_a, False)
 
 def rightforwards():
 	GPIO.output(motor1_a, True)
 	GPIO.output(motor2_b, True)
-	sleep(1)
+	time.sleep(1)
 	GPIO.output(motor1_a, False)
 	GPIO.output(motor2_b, False)
 
 def rightbackwards():
 	GPIO.output(motor1_b, True)
 	GPIO.output(motor2_b, True)
-	sleep(1)
+	time.sleep(1)
 	GPIO.output(motor1_b, False)
 	GPIO.output(motor2_b, False)
 
 def leftbackwards():
 	GPIO.output(motor1_b, True)
 	GPIO.output(motor2_a, True)
-	sleep(1)
+	time.sleep(1)
 	GPIO.output(motor1_b, False)
 	GPIO.output(motor2_a, False)
 
