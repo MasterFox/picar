@@ -1,4 +1,4 @@
-PiCar 0.03alpha
+PiCar 0.04alpha
 ================
 
 Control your radio-controlled car with some Python and Ryanteck Motor Controller Board!
@@ -16,6 +16,7 @@ Setup
 4. Move to the "picar"-directory and execute start.py as root.
 5. Type "selftest" to check the correct wiring of your motors and if needed change the wiring.
 6. Report every bug to me! picar.infoandbugs@gmail.com
+7. To enable the experimental features remove the '#' before the code parts marked as experimental. USAGE AT YOUR OWN RISK!
 
 Usage
 =====
@@ -29,6 +30,13 @@ After starting the program, you can use the following commands:
 + selftest - for checking the functionality of every motor
 + quit - quit the application
 + help - show command overview
+
+PiCar 0.04alpha
+===============
+
++ Renamed internal variables because of development guideline
++ EXPERIMENTAL: Added 'stealth'-mode
++ EXPERIMENTAL: Added 'debug'-mode
 
 PiCar 0.03alpha
 ===============
