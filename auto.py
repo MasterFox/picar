@@ -147,7 +147,7 @@ while navix_distance > 40:
 	forwards()
 	navix()
 
-while navix_distance <= 40:
+while navix_distance < 40:
 	print navix_distance
 	leftforwards()
 	navix()
