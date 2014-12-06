@@ -139,6 +139,7 @@ def navix():
 	global navix_distance
 	navix_distance = distance
 
+selftest()
 navix()
 
 while navix_distance > 40:
