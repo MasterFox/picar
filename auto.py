@@ -142,14 +142,13 @@ def navix():
 selftest()
 navix()
 
-while navix_distance > 40:
+while navix_distance != 0:
 	print navix_distance
-	forwards()
-	navix()
-
-while navix_distance < 40:
-	print navix_distance
-	leftforwards()
-	navix()
+	if navix_distance > 40:
+		forwards()
+		navix()
+ 	if navix_distance < 40:
+		leftforwards()
+		navix()
 
 print("Program ended successfully")
