@@ -30,6 +30,7 @@ motor2_b = 23
 lighting = 24
 usonic_trig = 25
 usonic_echo = 27
+distance = 0
 
 #Setup the outputs
 GPIO.setup(motor1_a,GPIO.OUT) #Set 17 as output (Motor 1 A)
@@ -148,5 +149,5 @@ while distance > 40:
 while distance <= 40:
 	left-forwards()
 	navix()
-	
+
 print("Program ended successfully")
