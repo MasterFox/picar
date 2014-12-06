@@ -30,7 +30,6 @@ motor2_b = 23
 lighting = 24
 usonic_trig = 25
 usonic_echo = 27
-distance = global navix_distance
 
 #Setup the outputs
 GPIO.setup(motor1_a,GPIO.OUT) #Set 17 as output (Motor 1 A)
@@ -142,12 +141,12 @@ def navix():
 
 navix()
 
-while distance > 40:
+while navix_distance > 40:
 	print distance
 	forwards()
 	navix()
 
-while distance <= 40:
+while navix_distance <= 40:
 	print distance
 	leftforwards()
 	navix()
