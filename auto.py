@@ -147,7 +147,7 @@ while distance > 40:
 	navix()
 
 while distance <= 40:
-	left-forwards()
+	leftforwards()
 	navix()
 
 print("Program ended successfully")
