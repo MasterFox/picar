@@ -139,9 +139,14 @@ def navix():
 	global navix_distance
 	navix_distance = distance
 
+navix()
+
 while distance > 40:
 	forwards()
+	navix()
 
 while distance <= 40:
 	left-forwards()
+	navix()
+	
 print("Program ended successfully")
