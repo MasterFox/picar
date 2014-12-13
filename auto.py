@@ -147,10 +147,10 @@ while x == 1:
 		print navix_distance
 		forwards(0.5)
 		navix()
-	if navix_distance < 40:
+	if navix_distance < 50:
 		print navix_distance
 		backwards(0.5)
-		leftforwards(1)
+		leftforwards(1.5)
 		navix()
 		#turn = turn + 1
 
