@@ -140,16 +140,16 @@ def navix():
 	global navix_distance
 	navix_distance = distance
 
-
+x = 1
 navix()
-while
-if navix_distance < 40:
-	forwards(0.5)
-	navix()
-else navix_distance > 40: #AND turn <= 5:
-	backwards(0.5)
-	leftforwards(1)
-	navix()
+while x == 1:
+	if navix_distance < 40:
+		forwards(0.5)
+		navix()
+	else navix_distance > 40: #AND turn <= 5:
+		backwards(0.5)
+		leftforwards(1)
+		navix()
 	#turn = turn + 1
 
 
