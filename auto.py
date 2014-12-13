@@ -30,6 +30,7 @@ motor2_b = 23
 lighting = 24
 usonic_trig = 25
 usonic_echo = 27
+turn
 
 #Setup the outputs
 GPIO.setup(motor1_a,GPIO.OUT) #Set 17 as output (Motor 1 A)
@@ -42,68 +43,68 @@ GPIO.setup(usonic_echo, GPIO.IN)
 print("Successful setup of GPIO pins")
 
 #Define basic selftest
-def selftest():
-	print("Forwards")
-	GPIO.output(motor1_a, True)
-	time.sleep(1)
-	GPIO.output(motor1_a, False)
-	time.sleep(1)
-	print("Backwards")
-	GPIO.output(motor1_b, True)
-	time.sleep(1)
-	GPIO.output(motor1_b, False)
-	time.sleep(1)
-	print("Left")
-	GPIO.output(motor2_a, True)
-	time.sleep(1)
-	GPIO.output(motor2_a, False)
-	time.sleep(1)
-	print("Right")
-	GPIO.output(motor2_b, True)
-	time.sleep(1)
-	GPIO.output(motor2_b, False)
-	time.sleep(1)
-	navix()
-	print navix_distance
-	print("Ended selftest without any errors")
+# def selftest():
+# 	print("Forwards")
+# 	GPIO.output(motor1_a, True)
+# 	time.sleep(1)
+# 	GPIO.output(motor1_a, False)
+# 	time.sleep(1)
+# 	print("Backwards")
+# 	GPIO.output(motor1_b, True)
+# 	time.sleep(1)
+# 	GPIO.output(motor1_b, False)
+# 	time.sleep(1)
+# 	print("Left")
+# 	GPIO.output(motor2_a, True)
+# 	time.sleep(1)
+# 	GPIO.output(motor2_a, False)
+# 	time.sleep(1)
+# 	print("Right")
+# 	GPIO.output(motor2_b, True)
+# 	time.sleep(1)
+# 	GPIO.output(motor2_b, False)
+# 	time.sleep(1)
+# 	navix()
+# 	print navix_distance
+# 	print("Ended selftest without any errors")
 
 
 #Define functions
-def forwards():
+def forwards(dur):
 	GPIO.output(motor1_a, True)
-	time.sleep(1)
+	time.sleep(dur)
 	GPIO.output(motor1_a, False)
 
-def backwards():
+def backwards(dur):
 	GPIO.output(motor1_b, True)
-	time.sleep(1)
+	time.sleep(dur)
 	GPIO.output(motor1_b, False)
 
-def leftforwards():
+def leftforwards(dur):
 	GPIO.output(motor1_a, True)
 	GPIO.output(motor2_a, True)
-	time.sleep(1)
+	time.sleep(dur)
 	GPIO.output(motor1_a, False)
 	GPIO.output(motor2_a, False)
 
-def rightforwards():
+def rightforwards(dur):
 	GPIO.output(motor1_a, True)
 	GPIO.output(motor2_b, True)
-	time.sleep(1)
+	time.sleep(dur)
 	GPIO.output(motor1_a, False)
 	GPIO.output(motor2_b, False)
 
-def rightbackwards():
+def rightbackwards(dur):
 	GPIO.output(motor1_b, True)
 	GPIO.output(motor2_b, True)
-	time.sleep(1)
+	time.sleep(dur)
 	GPIO.output(motor1_b, False)
 	GPIO.output(motor2_b, False)
 
-def leftbackwards():
+def leftbackwards(dur):
 	GPIO.output(motor1_b, True)
 	GPIO.output(motor2_a, True)
-	time.sleep(1)
+	time.sleep(dur)
 	GPIO.output(motor1_b, False)
 	GPIO.output(motor2_a, False)
 
@@ -139,16 +140,17 @@ def navix():
 	global navix_distance
 	navix_distance = distance
 
-selftest()
-navix()
 
-while navix_distance != 0:
-	print navix_distance
-	if navix_distance > 40:
-		forwards()
-		navix()
- 	if navix_distance < 40:
-		leftforwards()
-		navix()
+navix()
+while
+if navix_distance < 40:
+	forwards(0.5)
+	navix()
+else navix_distance > 40: #AND turn <= 5:
+	backwards(0.5)
+	leftforwards(1)
+	navix()
+	#turn = turn + 1
+
 
 print("Program ended successfully")
