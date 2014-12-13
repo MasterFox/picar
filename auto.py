@@ -146,11 +146,11 @@ while x == 1:
 	if navix_distance < 40:
 		forwards(0.5)
 		navix()
-	else navix_distance > 40: #AND turn <= 5:
+	else navix_distance > 40:
 		backwards(0.5)
 		leftforwards(1)
 		navix()
-	#turn = turn + 1
+		#turn = turn + 1
 
 
 print("Program ended successfully")
