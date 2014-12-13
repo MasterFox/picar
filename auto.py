@@ -143,10 +143,12 @@ def navix():
 x = 1
 navix()
 while x == 1:
-	if navix_distance < 40:
+	if navix_distance > 40:
+		print navix_distance
 		forwards(0.5)
 		navix()
-	if navix_distance > 40:
+	if navix_distance < 40:
+		print navix_distance
 		backwards(0.5)
 		leftforwards(1)
 		navix()
