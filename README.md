@@ -1,7 +1,7 @@
-PiCar 0.04alpha
+PiCar 0.1beta
 ================
 
-Control your radio-controlled car with some Python and Ryanteck Motor Controller Board!
+Control your radio-controlled car with some Python and Ryanteck Motor Controller Board! Let it drive through an area completely autonomous!
 
 We want you! 
 ============
@@ -30,6 +30,19 @@ After starting the program, you can use the following commands:
 + selftest - for checking the functionality of every motor
 + quit - quit the application
 + help - show command overview
+
+Autonomous drive
+================
+
+Just execute $ cd picar && sudo python auto.py.
+
+PiCar 0.1beta
+=============
+
+
++ Added automotive drive module (NaviX 0.1beta; auto.py) CAUTION: THIS MODULE CAN END UP IN AN INFINITE LOOP! PLEASE USE WITH CARE!
++ Added NaviX to selftest
+
 
 PiCar 0.04alpha
 ===============
