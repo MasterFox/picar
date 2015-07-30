@@ -103,28 +103,28 @@ def backwards():
 def leftforwards():
 	GPIO.output(motor1_a, True)
 	GPIO.output(motor2_a, True)
-	time.sleep(1)
+	time.sleep(0.5)
 	GPIO.output(motor1_a, False)
 	GPIO.output(motor2_a, False)
 
 def rightforwards():
 	GPIO.output(motor1_a, True)
 	GPIO.output(motor2_b, True)
-	time.sleep(1)
+	time.sleep(0.5)
 	GPIO.output(motor1_a, False)
 	GPIO.output(motor2_b, False)
 
 def rightbackwards():
 	GPIO.output(motor1_b, True)
 	GPIO.output(motor2_b, True)
-	time.sleep(1)
+	time.sleep(0.5)
 	GPIO.output(motor1_b, False)
 	GPIO.output(motor2_b, False)
 
 def leftbackwards():
 	GPIO.output(motor1_b, True)
 	GPIO.output(motor2_a, True)
-	time.sleep(1)
+	time.sleep(0.5)
 	GPIO.output(motor1_b, False)
 	GPIO.output(motor2_a, False)
 
