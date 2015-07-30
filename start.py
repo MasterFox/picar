@@ -166,30 +166,39 @@ command = raw_input("?")
 while command != "quit":
 	if command == "forwards":
 		forwards()
+		command = 0
 		command = raw_input("?")
 	if command == "backwards":
 		backwards()
+		command = 0
 		command = raw_input("?")
 	if command == "left forwards":
 		leftforwards()
+		command = 0
 		command = raw_input("?")
 	if command == "right forwards":
 		rightforwards()
+		command = 0
 		command = raw_input("?")
 	if command == "right backwards":
 		rightbackwards()
+		command = 0
 		command = raw_input("?")
 	if command == "left backwards":
 		leftbackwards()
+		command = 0
 		command = raw_input("?")
 	if command == "selftest":
 		selftest()
+		command = 0
 		command = raw_input("?")
 	if command == "help":
 		help()
+		command = 0
 		command = raw_input("?")
 	else:
 		print("Invalid input, try again")
+		command = 0
 		command = raw_input("?")
 
 print("Program ended successfully")
