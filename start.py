@@ -97,7 +97,7 @@ def forwards():
 
 def backwards():
 	GPIO.output(motor1_b, True)
-	time.sleep(0.5#!/usr/bin/env )
+	time.sleep(0.5)
 	GPIO.output(motor1_b, False)
 
 def leftforwards():
