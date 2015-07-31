@@ -92,39 +92,39 @@ def selftest():
 #Define functions
 def forwards():
 	GPIO.output(motor1_a, True)
-	time.sleep(0.5)
+	time.sleep(1)
 	GPIO.output(motor1_a, False)
 
 def backwards():
 	GPIO.output(motor1_b, True)
-	time.sleep(0.5)
+	time.sleep(1)
 	GPIO.output(motor1_b, False)
 
 def leftforwards():
 	GPIO.output(motor1_a, True)
 	GPIO.output(motor2_a, True)
-	time.sleep(0.5)
+	time.sleep(1)
 	GPIO.output(motor1_a, False)
 	GPIO.output(motor2_a, False)
 
 def rightforwards():
 	GPIO.output(motor1_a, True)
 	GPIO.output(motor2_b, True)
-	time.sleep(0.5)
+	time.sleep(1)
 	GPIO.output(motor1_a, False)
 	GPIO.output(motor2_b, False)
 
 def rightbackwards():
 	GPIO.output(motor1_b, True)
 	GPIO.output(motor2_b, True)
-	time.sleep(0.5)
+	time.sleep(1)
 	GPIO.output(motor1_b, False)
 	GPIO.output(motor2_b, False)
 
 def leftbackwards():
 	GPIO.output(motor1_b, True)
 	GPIO.output(motor2_a, True)
-	time.sleep(0.5)
+	time.sleep(1)
 	GPIO.output(motor1_b, False)
 	GPIO.output(motor2_a, False)
 
@@ -135,6 +135,7 @@ def help():
 	print("right forwards - move your car right forwards")
 	print("For turning backwards use the same pattern with backwards")
 	print("selftest - for testing the correct wiring of your car")
+	print("distance - shows the current distance to the next object using the ultrasonic sensor")
 	print("help - show this overview")
 	print("quit - quit the application")
 
