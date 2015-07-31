@@ -196,6 +196,11 @@ while command != "quit":
 		help()
 		command = 0
 		command = raw_input("?")
+	if command == "distance":
+		navix()
+		print navix_distance
+		command = 0
+		command = raw_input("?")
 	else:
 		print("Invalid input, try again")
 		command = 0
