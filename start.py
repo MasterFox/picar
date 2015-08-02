@@ -165,7 +165,7 @@ def navix():
 #Open command interface
 command = raw_input("?")
 while command != "quit":
-	elif command == "forwards":
+	if command == "forwards":
 		forwards()
 		command = raw_input("?")
 	elif command == "backwards":
