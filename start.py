@@ -165,46 +165,36 @@ def navix():
 #Open command interface
 command = raw_input("?")
 while command != "quit":
-	if command == "forwards":
+	elif command == "forwards":
 		forwards()
-		command = 0
 		command = raw_input("?")
-	if command == "backwards":
+	elif command == "backwards":
 		backwards()
-		command = 0
 		command = raw_input("?")
-	if command == "left forwards":
+	elif command == "left forwards":
 		leftforwards()
-		command = 0
 		command = raw_input("?")
-	if command == "right forwards":
+	elif command == "right forwards":
 		rightforwards()
-		command = 0
 		command = raw_input("?")
-	if command == "right backwards":
+	elif command == "right backwards":
 		rightbackwards()
-		command = 0
 		command = raw_input("?")
-	if command == "left backwards":
+	elif command == "left backwards":
 		leftbackwards()
-		command = 0
 		command = raw_input("?")
-	if command == "selftest":
+	elif command == "selftest":
 		selftest()
-		command = 0
 		command = raw_input("?")
-	if command == "help":
+	elif command == "help":
 		help()
-		command = 0
 		command = raw_input("?")
-	if command == "distance":
+	elif command == "distance":
 		navix()
 		print navix_distance
-		command = 0
 		command = raw_input("?")
 	else:
 		print("Invalid input, try again")
-		command = 0
 		command = raw_input("?")
 
 print("Program ended successfully")
