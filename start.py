@@ -88,7 +88,10 @@ def selftest():
 	time.sleep(1)
 	navix()
 	print navix_distance
-	lumix(blink)
+	print("Lighting")
+	GPIO.output(lighting, True)
+	sleep(1)
+	GPIO.output(lighting, False<)
 	print("Ended selftest without any errors")
 
 
