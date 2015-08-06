@@ -196,7 +196,7 @@ while command != "quit":
 		print navix_distance
 		command = raw_input("?")
 	else:
-		print("Invalid input, try again", file=sys.stderr)
+		print("Invalid input, try again")
 		command = raw_input("?")
 
 print("Program ended successfully")
