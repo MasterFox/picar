@@ -88,6 +88,7 @@ def selftest():
 	time.sleep(1)
 	navix()
 	print navix_distance
+	lumix(blink)
 	print("Ended selftest without any errors")
 
 
@@ -151,6 +152,8 @@ def help():
 	print("For turning backwards use the same pattern with backwards")
 	print("selftest - for testing the correct wiring of your car")
 	print("distance - shows the current distance to the next object using the ultrasonic sensor")
+	print("stealth - the lighting is switched off")
+	print("light - the lighting is switched on")
 	print("help - show this overview")
 	print("quit - quit the application")
 
@@ -208,7 +211,14 @@ while command != "quit":
 		navix()
 		print navix_distance
 		command = raw_input("?")
+	elif command == "stealth":
+		lumix(stealth)
+		command = raw_input("?")
+	elif command == "light":
+		lumix(light)
+		command = raw_input ("?")
 	else:
+		lumix(blink)
 		print("Invalid input, try again")
 		command = raw_input("?")
 
