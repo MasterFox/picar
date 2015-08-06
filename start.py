@@ -215,13 +215,13 @@ while command != "quit":
 		print navix_distance
 		command = raw_input("?")
 	elif command == "stealth":
-		lumix(stealth)
+		lumix("stealth")
 		command = raw_input("?")
 	elif command == "light":
-		lumix(light)
+		lumix("light")
 		command = raw_input ("?")
 	else:
-		lumix(blink)
+		lumix("blink")
 		print("Invalid input, try again")
 		command = raw_input("?")
 
