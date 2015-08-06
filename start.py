@@ -99,7 +99,7 @@ def lumix(arg):
 		GPIO.output(lighting, True)
 		GPIO.output(lighting, False)
 		GPIO.output(lighting, True)
-	elif arg == "stealth"
+	elif arg == "stealth":
 		GPIO.output(lighting, False)
 	elif arg == "light":
 		GPIO.output(lighting, True)
