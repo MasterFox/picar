@@ -91,7 +91,7 @@ def selftest():
 	print("Lighting")
 	GPIO.output(lighting, True)
 	sleep(1)
-	GPIO.output(lighting, False<)
+	GPIO.output(lighting, False)
 	print("Ended selftest without any errors")
 
 
