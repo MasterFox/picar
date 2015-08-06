@@ -51,7 +51,7 @@ GPIO.setup(lighting, GPIO.OUT) #Set up lighting output
 GPIO.setup(usonic_trig, GPIO.OUT)
 GPIO.setup(usonic_echo, GPIO.IN)
 print("Successful setup of GPIO pins")
-print("Starting LumiX eninge...")
+print("Starting LumiX engine...")
 GPIO.output(lighting, True)
 print("Done.")
 #Check if started in stealth mode (will be included later; buggy!)
@@ -92,6 +92,19 @@ def selftest():
 
 
 #Define functions
+def lumix(arg):
+	if arg == "blink":
+		GPIO.output(lighting, False)
+		GPIO.output(lighting, True)
+		GPIO.output(lighting, False)
+		GPIO.output(lighting, True)
+	elif arg == "stealth"
+		GPIO.output(lighting, False)
+	elif arg == "light":
+		GPIO.output(lighting, True)
+	else:
+		pass
+
 def forwards():
 	GPIO.output(motor1_a, True)
 	time.sleep(1)
