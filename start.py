@@ -51,7 +51,9 @@ GPIO.setup(lighting, GPIO.OUT) #Set up lighting output
 GPIO.setup(usonic_trig, GPIO.OUT)
 GPIO.setup(usonic_echo, GPIO.IN)
 print("Successful setup of GPIO pins")
-
+print("Starting LumiX eninge...")
+GPIO.output(lighting, True)
+print("Done.")
 #Check if started in stealth mode (will be included later; buggy!)
 #if startarg:
 #	if sys.argv[1] == "--stealth":
@@ -194,7 +196,7 @@ while command != "quit":
 		print navix_distance
 		command = raw_input("?")
 	else:
-		print("Invalid input, try again")
+		print("Invalid input, try again", file=sys.stderr)
 		command = raw_input("?")
 
 print("Program ended successfully")
