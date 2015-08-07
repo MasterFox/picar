@@ -118,18 +118,22 @@ navix_validation = raw_input("Please confirm autonomous drive by pressing y or q
 
 i = 1
 navix()
-while navix_validation == "y" and i in range(1,5):
-	if navix_distance > 50:
-		print navix_distance
-		forwards(0.5)
-		i = i + 1
-		navix()
-	if navix_distance < 50:
-		print navix_distance
-		backwards(0.5)
-		leftforwards(1.5)
-		i = i + 1
-		navix()
-navix_validation = raw_input("Please confirm autonomous drive by pressing y or quit with q")
+while navix_validation != "q":
+	if i <=5:
+		if navix_distance > 50:
+			print navix_distance
+			forwards(0.5)
+			i = i + 1
+			navix()
+		if navix_distance < 50:
+			print navix_distance
+			backwards(0.5)
+			leftforwards(1.5)
+			i = i + 1
+			navix()
+	if i == 5:
+		navix_validation = raw_input("Please confirm autonomous drive by pressing y or quit with q")
+		i = 1
+
 		
 print("Program ended successfully")
