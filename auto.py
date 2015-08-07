@@ -42,32 +42,6 @@ GPIO.setup(usonic_trig, GPIO.OUT)
 GPIO.setup(usonic_echo, GPIO.IN)
 print("Successful setup of GPIO pins")
 
-#Define basic selftest
-# def selftest():
-# 	print("Forwards")
-# 	GPIO.output(motor1_a, True)
-# 	time.sleep(1)
-# 	GPIO.output(motor1_a, False)
-# 	time.sleep(1)
-# 	print("Backwards")
-# 	GPIO.output(motor1_b, True)
-# 	time.sleep(1)
-# 	GPIO.output(motor1_b, False)
-# 	time.sleep(1)
-# 	print("Left")
-# 	GPIO.output(motor2_a, True)
-# 	time.sleep(1)
-# 	GPIO.output(motor2_a, False)
-# 	time.sleep(1)
-# 	print("Right")
-# 	GPIO.output(motor2_b, True)
-# 	time.sleep(1)
-# 	GPIO.output(motor2_b, False)
-# 	time.sleep(1)
-# 	navix()
-# 	print navix_distance
-# 	print("Ended selftest without any errors")
-
 
 #Define functions
 def forwards(dur):
@@ -140,19 +114,22 @@ def navix():
 	global navix_distance
 	navix_distance = distance
 
-x = 1
+navix_validation = raw_input("Please confirm autonomous drive by pressing y or quit with q")
+
+i = 1
 navix()
-while x == 1:
+while navix_validation == "y" and i in range(1,5):
 	if navix_distance > 50:
 		print navix_distance
 		forwards(0.5)
+		i = i + 1
 		navix()
 	if navix_distance < 50:
 		print navix_distance
 		backwards(0.5)
 		leftforwards(1.5)
+		i = i + 1
 		navix()
-		#turn = turn + 1
-
-
+navix_validation = raw_input("Please confirm autonomous drive by pressing y or quit with q")
+		
 print("Program ended successfully")
