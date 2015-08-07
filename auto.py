@@ -113,9 +113,9 @@ def navix():
 
 	global navix_distance
 	navix_distance = distance
-print()
+print
 navix_validation = raw_input("Please confirm autonomous drive by pressing y or quit with q: ")
-print()
+print
 i = 1
 navix()
 while navix_validation != "q":
@@ -132,8 +132,8 @@ while navix_validation != "q":
 			i = i + 1
 			navix()
 	if i == 6:
-		navix_validation = raw_input("Please confirm autonomous drive by pressing y or quit with q")
+		navix_validation = raw_input("Please confirm autonomous drive by pressing y or quit with q: ")
 		i = 1
 
-		
+print		
 print("Program ended successfully")
