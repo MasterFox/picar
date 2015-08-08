@@ -120,7 +120,7 @@ print
 i = 1
 navix()
 while navix_validation != "q":
-	if i < 11:
+	if i != 11:
 		if navix_distance > 50:
 			print navix_distance
 			forwards(1)
