@@ -129,6 +129,12 @@ while navix_validation != "q":
 		if navix_distance < 50:
 			print navix_distance
 			backwards(1)
+			navix()
+			print navix_distance
+			while navix_distance < 50:
+				backwards()
+				navix()
+				print navix_distance
 			leftforwards(1.5)
 			i = i + 1
 			navix()
