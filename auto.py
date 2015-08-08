@@ -14,9 +14,10 @@ if sys.argv is None:
 else:
 	startarg = True
 
-print("PiCar 0.01beta - Contributed by Leon Schwarze under GNU-GPL Version 2 license")
+print("PiCar 0.03beta - Developed by Leon Schwarze under GNU-GPL Version 2 license")
 print("Welcome")
-print("Setting up GPIO pins")
+print
+print("Setting up GPIO pins...")
 
 #Setup GPIO
 GPIO.setmode(GPIO.BCM) #Set the pin numbers to Broadcom Mode
@@ -40,7 +41,7 @@ GPIO.setup(motor2_b,GPIO.OUT) #Set 23 as output (Motor 2 B)
 GPIO.setup(lighting, GPIO.OUT) #Set up lighting output
 GPIO.setup(usonic_trig, GPIO.OUT)
 GPIO.setup(usonic_echo, GPIO.IN)
-print("Successful setup of GPIO pins")
+print("Done.")
 
 
 #Define functions
@@ -122,16 +123,16 @@ while navix_validation != "q":
 	if i <=5:
 		if navix_distance > 50:
 			print navix_distance
-			forwards(0.5)
+			forwards(1)
 			i = i + 1
 			navix()
 		if navix_distance < 50:
 			print navix_distance
 			backwards(1)
-			leftforwards(1)
+			leftforwards(1.5)
 			i = i + 1
 			navix()
-	if i == 6:
+	if i == 11:
 		navix_validation = raw_input("Please confirm autonomous drive by pressing y or quit with q: ")
 		i = 1
 
