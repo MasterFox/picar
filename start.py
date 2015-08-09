@@ -229,6 +229,11 @@ def navix():
 	global navix_distance
 	navix_distance = distance
 
+def update():
+	print("Executing updater...")
+	proc = subprocess.Popen("./updater.sh")
+	print("[Done]")
+	print("Terminating PiCar. Please restart!")
 
 #Open command interface
 command = raw_input("?")
@@ -270,9 +275,12 @@ while command != "quit":
 	elif command == "auto":
 		auto()
 		command == raw_input("?")
+	elif command == "update":
+		update()
+		break
 	else:
 		lumix("blink")
 		print("Invalid input, try again")
 		command = raw_input("?")
 
-print("Program ended successfully")
+print("Program terminated successfully")
