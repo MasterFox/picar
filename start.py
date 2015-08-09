@@ -93,7 +93,7 @@ def selftest():
 	time.sleep(1)
 	print("Checking ultrasonic sensor...")
 	navix()
-	print("[Done] Current distance is "navix_distance ".")
+	print("[Done] Current distance is " navix_distance ".")
 	print("Checking lighting...")
 	GPIO.output(lighting, True)
 	time.sleep(1)
