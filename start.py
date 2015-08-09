@@ -99,6 +99,7 @@ def selftest():
 		 print "PiCar is online" 
 	else:
     	print "PiCar is offline."
+
 	print("Ended selftest without any errors")
 
 
