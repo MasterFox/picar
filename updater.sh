@@ -1,6 +1,7 @@
 #!/bin/bash
 echo "Updater for PiCar - Ver. 0.02alpha"
 echo "Starting updating process..."
+ls 2>/dev/null
 sleep 2
 #Create update directory
 cd ~
@@ -20,3 +21,5 @@ echo "Update successfully installed."
 #Doing some adverstising :)
 echo "Please report every bug to picar.infoandbugs@gmail.com."
 echo "Follow us on Twitter @picar_os!"
+sleep 1
+exit 0
