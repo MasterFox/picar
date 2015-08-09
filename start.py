@@ -109,41 +109,41 @@ def lumix(arg):
 	else:
 		pass
 
-def forwards():
+def forwards(dur):
 	GPIO.output(motor1_a, True)
-	time.sleep(1)
+	time.sleep(dur)
 	GPIO.output(motor1_a, False)
 
-def backwards():
+def backwards(dur):
 	GPIO.output(motor1_b, True)
-	time.sleep(1)
+	time.sleep(dur)
 	GPIO.output(motor1_b, False)
 
-def leftforwards():
+def leftforwards(dur):
 	GPIO.output(motor1_a, True)
 	GPIO.output(motor2_a, True)
-	time.sleep(1)
+	time.sleep(dur)
 	GPIO.output(motor1_a, False)
 	GPIO.output(motor2_a, False)
 
-def rightforwards():
+def rightforwards(dur):
 	GPIO.output(motor1_a, True)
 	GPIO.output(motor2_b, True)
-	time.sleep(1)
+	time.sleep(dur)
 	GPIO.output(motor1_a, False)
 	GPIO.output(motor2_b, False)
 
-def rightbackwards():
+def rightbackwards(dur):
 	GPIO.output(motor1_b, True)
 	GPIO.output(motor2_b, True)
-	time.sleep(1)
+	time.sleep(dur)
 	GPIO.output(motor1_b, False)
 	GPIO.output(motor2_b, False)
 
-def leftbackwards():
+def leftbackwards(dur):
 	GPIO.output(motor1_b, True)
 	GPIO.output(motor2_a, True)
-	time.sleep(1)
+	time.sleep(dur)
 	GPIO.output(motor1_b, False)
 	GPIO.output(motor2_a, False)
 
@@ -215,22 +215,22 @@ def navix():
 command = raw_input("?")
 while command != "quit":
 	if command == "forwards":
-		forwards()
+		forwards(1)
 		command = raw_input("?")
 	elif command == "backwards":
-		backwards()
+		backwards(1)
 		command = raw_input("?")
 	elif command == "left forwards":
-		leftforwards()
+		leftforwards(1)
 		command = raw_input("?")
 	elif command == "right forwards":
-		rightforwards()
+		rightforwards(1)
 		command = raw_input("?")
 	elif command == "right backwards":
-		rightbackwards()
+		rightbackwards(1)
 		command = raw_input("?")
 	elif command == "left backwards":
-		leftbackwards()
+		leftbackwards(1)
 		command = raw_input("?")
 	elif command == "selftest":
 		selftest()
