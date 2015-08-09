@@ -96,9 +96,9 @@ def selftest():
 	print("Network")
 	proc = subprocess.Popen(["ping -c 2", "http://www.google.com"], stdout = subprocess.PIPE, shell = True)
 	if "Antwort von" in proc.stdout.read():
-		 print "PiCar is online" 
+		print "PiCar is online" 
 	else:
-    	print("PiCar is offline.")
+		print("PiCar is offline.")
 
 	print("Ended selftest without any errors")
 
