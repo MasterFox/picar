@@ -95,7 +95,7 @@ def selftest():
 	GPIO.output(lighting, False)
 	print("Network")
 	proc = subprocess.Popen(["ping -c 2 www.google.com"], stdout = subprocess.PIPE, shell = True)
-	if "Antwort von" in proc.stdout.read():
+	if "0% packet loss" in proc.stdout.read():
 		print "PiCar is online" 
 	else:
 		print("PiCar is offline.")
