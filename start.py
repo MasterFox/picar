@@ -150,6 +150,7 @@ def leftbackwards():
 def auto():
 	i = 1
 	navix()
+	navix_validation = raw_input("Please confirm autonomous drive by pressing y or quit with q: ")
 	while navix_validation != "q":
 		if i < 11:
 			if navix_distance > 50:
