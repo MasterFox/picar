@@ -15,9 +15,10 @@ if sys.argv is None:
 else:
 	startarg = True
 
-print("PiCar 0.01beta - Contributed by Leon Schwarze under GNU-GPL Version 2 license")
-print("Welcome")
-print("Setting up GPIO pins")
+print("PiCar 0.03beta - Developed by Leon Schwarze under GNU-GPL Version 2 license")
+print("Welcome!")
+print
+print("Setting up GPIO pins...")
 
 #Setup GPIO
 GPIO.setmode(GPIO.BCM) #Set the pin numbers to Broadcom Mode
@@ -51,10 +52,11 @@ GPIO.setup(motor2_b,GPIO.OUT) #Set 23 as output (Motor 2 B)
 GPIO.setup(lighting, GPIO.OUT) #Set up lighting output
 GPIO.setup(usonic_trig, GPIO.OUT)
 GPIO.setup(usonic_echo, GPIO.IN)
-print("Successful setup of GPIO pins")
+print("[Done] Successful setup of GPIO pins.")
 print("Starting LumiX engine...")
 GPIO.output(lighting, True)
-print("Done.")
+print("[Done]")
+print
 #Check if started in stealth mode (will be included later; buggy!)
 #if startarg:
 #	if sys.argv[1] == "--stealth":
