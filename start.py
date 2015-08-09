@@ -98,7 +98,7 @@ def selftest():
 	if "Antwort von" in proc.stdout.read():
 		 print "PiCar is online" 
 	else:
-    	print "PiCar is offline."
+    	print("PiCar is offline.")
 
 	print("Ended selftest without any errors")
 
