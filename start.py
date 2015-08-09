@@ -232,8 +232,7 @@ def navix():
 def update():
 	print("Executing updater...")
 	proc = subprocess.Popen("./updater.sh")
-	print("[Done]")
-	print("Terminating PiCar. Please restart!")
+	print("Terminating PiCar. Please restart after updating process.")
 
 #Open command interface
 command = raw_input("?")
@@ -283,4 +282,6 @@ while command != "quit":
 		print("Invalid input, try again")
 		command = raw_input("?")
 
-print("Program terminated successfully")
+print("Terminating PiCar...")
+print("[Done]")
+print
