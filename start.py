@@ -172,9 +172,12 @@ def auto():
 				navix()
 		if i == 6:
 			navix_validation = raw_input("Please confirm autonomous drive by pressing y or quit with q: ")
-			i = 1	  
-	break
-			
+			if navix_validation == "y":
+				i = 1
+				continue
+			else:
+				break  
+	
 def help():
 	print("forwards - move your car forwards")
 	print("backwards - move your car backwards")
