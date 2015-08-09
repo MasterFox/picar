@@ -67,38 +67,44 @@ print("Done.")
 
 #Define basic selftest
 def selftest():
-	print("Forwards")
+	print("Driving forwards...")
 	GPIO.output(motor1_a, True)
 	time.sleep(1)
 	GPIO.output(motor1_a, False)
+	print("[Done]")
 	time.sleep(1)
-	print("Backwards")
+	print("Driving backwards...")
 	GPIO.output(motor1_b, True)
 	time.sleep(1)
 	GPIO.output(motor1_b, False)
+	print("[Done]")
 	time.sleep(1)
-	print("Left")
+	print("Turning left...")
 	GPIO.output(motor2_a, True)
 	time.sleep(1)
 	GPIO.output(motor2_a, False)
+	print("[Done]")
 	time.sleep(1)
-	print("Right")
+	print("Turning right...")
 	GPIO.output(motor2_b, True)
 	time.sleep(1)
 	GPIO.output(motor2_b, False)
+	print("[Done]")
 	time.sleep(1)
+	print("Checking ultrasonic sensor...")
 	navix()
-	print navix_distance
-	print("Lighting")
+	print("[Done] Current distance is ", navix_distance)
+	print("Checking lighting...")
 	GPIO.output(lighting, True)
 	time.sleep(1)
 	GPIO.output(lighting, False)
-	print("Network")
+	print("[Done] Lighting checked.")
+	print("Checking network status...")
 	proc = subprocess.Popen(["ping -c 2 www.google.com"], stdout = subprocess.PIPE, shell = True)
 	if "0% packet loss" in proc.stdout.read():
-		print "PiCar is online" 
+		print "[Done] PiCar is online." 
 	else:
-		print("PiCar is offline.")
+		print("[Error] PiCar is offline.")
 
 	print("Ended selftest without any errors")
 
