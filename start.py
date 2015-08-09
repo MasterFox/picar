@@ -152,7 +152,7 @@ def auto():
 	navix()
 	navix_validation = raw_input("Please confirm autonomous drive by pressing y or quit with q: ")
 	while navix_validation != "q":
-		if i < 11:
+		if i < 6:
 			if navix_distance > 50:
 				print navix_distance
 				forwards(1)
@@ -170,10 +170,9 @@ def auto():
 				leftforwards(1.5)
 				i = i + 1
 				navix()
-		if i == 11:
+		if i == 6:
 			navix_validation = raw_input("Please confirm autonomous drive by pressing y or quit with q: ")
-			i = 1
-		  
+			i = 1	  
 
 def help():
 	print("forwards - move your car forwards")
