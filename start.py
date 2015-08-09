@@ -94,7 +94,7 @@ def selftest():
 	time.sleep(1)
 	GPIO.output(lighting, False)
 	print("Network")
-	proc = subprocess.Popen(["ping -c 2", "http://www.google.com"], stdout = subprocess.PIPE, shell = True)
+	proc = subprocess.Popen(["ping -c 2 http://www.google.com"], stdout = subprocess.PIPE, shell = True)
 	if "Antwort von" in proc.stdout.read():
 		print "PiCar is online" 
 	else:
