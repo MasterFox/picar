@@ -147,6 +147,33 @@ def leftbackwards():
 	GPIO.output(motor1_b, False)
 	GPIO.output(motor2_a, False)
 
+def auto():
+	i = 1
+	navix()
+	while navix_validation != "q":
+		if i < 11:
+			if navix_distance > 50:
+				print navix_distance
+				forwards(1)
+				i = i + 1
+				navix()
+			if navix_distance < 50:
+				print navix_distance
+				backwards(1)
+				navix()
+				print navix_distance
+				while navix_distance < 70:
+					backwards(1)
+					navix()
+					print navix_distance
+				leftforwards(1.5)
+				i = i + 1
+				navix()
+		if i == 11:
+			navix_validation = raw_input("Please confirm autonomous drive by pressing y or quit with q: ")
+			i = 1
+		  
+
 def help():
 	print("forwards - move your car forwards")
 	print("backwards - move your car backwards")
@@ -220,6 +247,9 @@ while command != "quit":
 	elif command == "light":
 		lumix("light")
 		command = raw_input ("?")
+	elif command == "auto":
+		auto()
+		command == raw_input("?")
 	else:
 		lumix("blink")
 		print("Invalid input, try again")
