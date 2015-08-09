@@ -8,6 +8,7 @@ __author__ = 'Leon Schwarze'
 import time
 import RPi.GPIO as GPIO
 import sys
+import subprocess
 
 if sys.argv is None:
 	startarg = False
@@ -92,6 +93,12 @@ def selftest():
 	GPIO.output(lighting, True)
 	time.sleep(1)
 	GPIO.output(lighting, False)
+	print("Network")
+	proc = subprocess.Popen(["ping -c 2", "http://www.google.com"], stdout = subprocess.PIPE, shell = True)
+	if "Antwort von" in proc.stdout.read():
+		 print "PiCar is online" 
+	else:
+    	print "PiCar is offline."
 	print("Ended selftest without any errors")
 
 
