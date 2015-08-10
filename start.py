@@ -204,6 +204,7 @@ def help():
 	print("distance - shows the current distance to the next object using the ultrasonic sensor")
 	print("stealth - the lighting is switched off")
 	print("light - the lighting is switched on")
+	print("auto - activating autonomous drive")
 	print("help - show this overview")
 	print("quit - quit the application")
 
@@ -233,6 +234,20 @@ def update():
 	print("Executing updater...")
 	proc = subprocess.Popen("./updater.sh")
 	print("Terminating PiCar. Please restart after updating process.")
+
+def turnover():
+	print("Turning over...")
+	leftbackwards()
+	rightforwards()
+	leftbackwards()
+	rightforwards()
+	leftbackwards()
+	rightforwards()
+	leftbackwards()
+	rightforwards()
+	leftbackwards()
+	rightforwards()
+	print("[Done]")
 
 #Open command interface
 command = raw_input("?")
@@ -277,6 +292,9 @@ while command != "quit":
 	elif command == "update":
 		update()
 		break
+	elif command == "turn over":
+		turnover()
+		command = raw_input("?")
 	else:
 		lumix("blink")
 		print("Invalid input, try again")
