@@ -1,7 +1,6 @@
 #!/bin/bash
 echo "Updater for PiCar - Ver. 0.02alpha"
 echo "Starting updating process..."
-ls 2>/dev/null
 sleep 2
 #Create update directory
 cd ~

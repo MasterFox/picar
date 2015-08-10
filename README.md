@@ -3,10 +3,6 @@ PiCar 0.2beta
 
 Control your radio-controlled car with some Python and Ryanteck Motor Controller Board! Let it drive through an area completely autonomous!
 
-We want you! 
-============
-You are interested in joining the PiCar project or you have some great ideas for features we should include? Feel free to contact me via picar.infoandbugs@gmail.com or on Twitter: @picar_os!
-
 Setup
 =====
 
