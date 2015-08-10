@@ -274,7 +274,7 @@ def comeback():
 	turnover()
 	while navix_directions.pop(len(navix_directions)-i) != "end":
 		if navix_directions.pop(len(navix_directions)-i) == "forwards":
-			print(navix_directions.pop(len(navix_directions)-i)
+			#print(navix_directions.pop(len(navix_directions)-i)
 			forwards(1)
 			time.sleep(1)
 			i = i+1
