@@ -270,21 +270,26 @@ def turnover():
 
 def comeback():
 	turnover()
-	while navix_directions.pop != "end":
+	while navix_directions.pop() != "end":
 		if navix_directions.pop() == "forwards":
 			forwards(1)
+			time.sleep(1)
 			continue
 		elif navix_directions.pop() == "backwards":
 			backwards(1)
+			time.sleep(1)
 			continue
 		elif navix_directions.pop() == "left forwards":
 			leftforwards(1)
+			time.sleep(1)
 			continue
 		elif navix_directions.pop() == "right forwards":
 			rightforwards(1)
+			time.sleep(1)
 			continue
 		elif navix_directions.pop() == "left backwards":
 			leftbackwards(1)
+			time.sleep(1)
 			continue
 		elif navix_directions.pop() == "right backwards":
 			rightbackwards(1)
