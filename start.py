@@ -237,16 +237,16 @@ def update():
 
 def turnover():
 	print("Turning over...")
-	leftbackwards()
-	rightforwards()
-	leftbackwards()
-	rightforwards()
-	leftbackwards()
-	rightforwards()
-	leftbackwards()
-	rightforwards()
-	leftbackwards()
-	rightforwards()
+	leftbackwards(1)
+	rightforwards(1)
+	leftbackwards(1)
+	rightforwards(1)
+	leftbackwards(1)
+	rightforwards(1)
+	leftbackwards(1)
+	rightforwards(1)
+	leftbackwards(1)
+	rightforwards(1)
 	print("[Done]")
 
 #Open command interface
