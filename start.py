@@ -273,33 +273,33 @@ def comeback():
 	print(navix_directions)
 	turnover()
 	while navix_directions.pop() != "end":
-		if navix_directions.pop(len(navix_directions)-i) == "forwards":
-			#print(navix_directions.pop(len(navix_directions)-i)
+		if navix_directions.pop() == "forwards":
+			print(navix_directions.pop()
 			forwards(1)
 			time.sleep(1)
 			i = i+1
-		elif navix_directions.pop(len(navix_directions)-i) == "backwards":
-			print(navix_directions.pop(len(navix_directions)-i))
+		elif navix_directions.pop() == "backwards":
+			print(navix_directions.pop())
 			backwards(1)
 			time.sleep(1)
 			i = i+1
-		elif navix_directions.pop(len(navix_directions)-i) == "left forwards":
-			print(navix_directions.pop(len(navix_directions)-i))
+		elif navix_directions.pop() == "left forwards":
+			print(navix_directions.pop())
 			leftforwards(1)
 			time.sleep(1)
 			i = i+1
-		elif navix_directions.pop(len(navix_directions)-i) == "right forwards":
-			print(navix_directions.pop(len(navix_directions)-i))
+		elif navix_directions.pop() == "right forwards":
+			print(navix_directions.pop())
 			rightforwards(1)
 			time.sleep(1)
 			i = i+1
-		elif navix_directions.pop(len(navix_directions)-i) == "left backwards":
-			print(navix_directions.pop(len(navix_directions)-i))
+		elif navix_directions.pop() == "left backwards":
+			print(navix_directions.pop())
 			leftbackwards(1)
 			time.sleep(1)
 			i = i+1
-		elif navix_directions.pop(len(navix_directions)-i) == "right backwards":
-			print(navix_directions.pop(len(navix_directions)-i))
+		elif navix_directions.pop() == "right backwards":
+			print(navix_directions.pop())
 			rightbackwards(1)
 			time.sleep(1)
 			i = i+1
