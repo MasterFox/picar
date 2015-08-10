@@ -275,31 +275,27 @@ def comeback():
 			print(navix_directions.pop())
 			forwards(1)
 			time.sleep(1)
-			continue
 		elif navix_directions.pop() == "backwards":
 			print(navix_directions.pop())
 			backwards(1)
 			time.sleep(1)
-			continue
 		elif navix_directions.pop() == "left forwards":
 			print(navix_directions.pop())
 			leftforwards(1)
 			time.sleep(1)
-			continue
 		elif navix_directions.pop() == "right forwards":
 			print(navix_directions.pop())
 			rightforwards(1)
 			time.sleep(1)
-			continue
 		elif navix_directions.pop() == "left backwards":
 			print(navix_directions.pop())
 			leftbackwards(1)
 			time.sleep(1)
-			continue
 		elif navix_directions.pop() == "right backwards":
 			print(navix_directions.pop())
 			rightbackwards(1)
-			continue
+		else:
+			pass
 
 
 #Open command interface
