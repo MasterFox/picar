@@ -43,6 +43,7 @@ motor2_b = 23
 lighting = 24
 usonic_trig = 25
 usonic_echo = 27
+navix_directions = []
 
 #Setup the outputs
 GPIO.setup(motor1_a,GPIO.OUT) #Set 17 as output (Motor 1 A)
@@ -55,6 +56,9 @@ GPIO.setup(usonic_echo, GPIO.IN)
 print("[Done] Successful setup of GPIO pins.")
 print("Starting LumiX engine...")
 GPIO.output(lighting, True)
+print("[Done]")
+print("Setting up NaviX Comeback...")
+navix_directions.append("end")
 print("[Done]")
 print
 #Check if started in stealth mode (will be included later; buggy!)
@@ -129,11 +133,13 @@ def forwards(dur):
 	GPIO.output(motor1_a, True)
 	time.sleep(dur)
 	GPIO.output(motor1_a, False)
+	navix_directions.append("forwards")
 
 def backwards(dur):
 	GPIO.output(motor1_b, True)
 	time.sleep(dur)
 	GPIO.output(motor1_b, False)
+	navix_directions.append("backwards")
 
 def leftforwards(dur):
 	GPIO.output(motor1_a, True)
@@ -141,6 +147,7 @@ def leftforwards(dur):
 	time.sleep(dur)
 	GPIO.output(motor1_a, False)
 	GPIO.output(motor2_a, False)
+	navix_directions.append("right forwards")
 
 def rightforwards(dur):
 	GPIO.output(motor1_a, True)
@@ -148,6 +155,7 @@ def rightforwards(dur):
 	time.sleep(dur)
 	GPIO.output(motor1_a, False)
 	GPIO.output(motor2_b, False)
+	navix_directions.append("left forwards")
 
 def rightbackwards(dur):
 	GPIO.output(motor1_b, True)
@@ -155,6 +163,7 @@ def rightbackwards(dur):
 	time.sleep(dur)
 	GPIO.output(motor1_b, False)
 	GPIO.output(motor2_b, False)
+	navix_directions.append("left backwards")
 
 def leftbackwards(dur):
 	GPIO.output(motor1_b, True)
@@ -162,6 +171,7 @@ def leftbackwards(dur):
 	time.sleep(dur)
 	GPIO.output(motor1_b, False)
 	GPIO.output(motor2_a, False)
+	navix_directions.append("right backwards")
 
 def auto():
 	i = 1
@@ -258,6 +268,28 @@ def turnover():
 	rightforwards(1)
 	print("[Done]")
 
+def comeback():
+	while navix_directions.pop != "end":
+		if navix_directions.pop() == "forwards":
+			forwards(1)
+			continue
+		elif navix_directions.pop() == "backwards":
+			backwards(1)
+			continue
+		elif navix_directions.pop() == "left forwards":
+			leftforwards(1)
+			continue
+		elif navix_directions.pop() == "right forwards":
+			rightforwards(1)
+			continue
+		elif navix_directions.pop() == "left backwards":
+			leftbackwards(1)
+			continue
+		elif navix_directions.pop() == "right backwards":
+			rightbackwards(1)
+			continue
+
+
 #Open command interface
 command = raw_input("?")
 while command != "quit":
@@ -303,6 +335,9 @@ while command != "quit":
 		break
 	elif command == "turn over":
 		turnover()
+		command = raw_input("?")
+	elif command == "come back"
+		comeback()
 		command = raw_input("?")
 	else:
 		lumix("blink")
