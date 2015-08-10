@@ -269,6 +269,7 @@ def turnover():
 	print("[Done]")
 
 def comeback():
+	turnover()
 	while navix_directions.pop != "end":
 		if navix_directions.pop() == "forwards":
 			forwards(1)
