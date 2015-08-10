@@ -337,7 +337,7 @@ while command != "quit":
 	elif command == "turn over":
 		turnover()
 		command = raw_input("?")
-	elif command == "come back"
+	elif command == "come back":
 		comeback()
 		command = raw_input("?")
 	else:
