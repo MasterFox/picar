@@ -294,6 +294,7 @@ def comeback():
 		elif navix_directions.pop() == "right backwards":
 			print(navix_directions.pop())
 			rightbackwards(1)
+			time.sleep(1)
 		else:
 			pass
 
