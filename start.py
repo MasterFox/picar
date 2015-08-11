@@ -133,13 +133,13 @@ def forwards(dur):
 	GPIO.output(motor1_a, True)
 	time.sleep(dur)
 	GPIO.output(motor1_a, False)
-	navix_directions.append("forwards")
+	
 
 def backwards(dur):
 	GPIO.output(motor1_b, True)
 	time.sleep(dur)
 	GPIO.output(motor1_b, False)
-	navix_directions.append("backwards")
+	
 
 def leftforwards(dur):
 	GPIO.output(motor1_a, True)
@@ -147,7 +147,7 @@ def leftforwards(dur):
 	time.sleep(dur)
 	GPIO.output(motor1_a, False)
 	GPIO.output(motor2_a, False)
-	navix_directions.append("right forwards")
+	
 
 def rightforwards(dur):
 	GPIO.output(motor1_a, True)
@@ -155,7 +155,7 @@ def rightforwards(dur):
 	time.sleep(dur)
 	GPIO.output(motor1_a, False)
 	GPIO.output(motor2_b, False)
-	navix_directions.append("left forwards")
+	
 
 def rightbackwards(dur):
 	GPIO.output(motor1_b, True)
@@ -163,7 +163,7 @@ def rightbackwards(dur):
 	time.sleep(dur)
 	GPIO.output(motor1_b, False)
 	GPIO.output(motor2_b, False)
-	navix_directions.append("left backwards")
+	
 
 def leftbackwards(dur):
 	GPIO.output(motor1_b, True)
@@ -171,7 +171,7 @@ def leftbackwards(dur):
 	time.sleep(dur)
 	GPIO.output(motor1_b, False)
 	GPIO.output(motor2_a, False)
-	navix_directions.append("right backwards")
+	
 
 def auto():
 	i = 1
@@ -313,21 +313,27 @@ command = raw_input("?")
 while command != "quit":
 	if command == "forwards":
 		forwards(1)
+		navix_directions.append("forwards")
 		command = raw_input("?")
 	elif command == "backwards":
 		backwards(1)
+		navix_directions.append("backwards")
 		command = raw_input("?")
 	elif command == "left forwards":
 		leftforwards(1)
+		navix_directions.append("right forwards")
 		command = raw_input("?")
 	elif command == "right forwards":
 		rightforwards(1)
+		navix_directions.append("left forwards")
 		command = raw_input("?")
 	elif command == "right backwards":
 		rightbackwards(1)
+		navix_directions.append("left backwards")
 		command = raw_input("?")
 	elif command == "left backwards":
 		leftbackwards(1)
+		navix_directions.append("right backwards")
 		command = raw_input("?")
 	elif command == "selftest":
 		selftest()
