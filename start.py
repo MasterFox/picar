@@ -298,7 +298,7 @@ def comeback(option):
 	else:
 		print("[Error] Invalid option!")
 
-# def netstat():
+def netstat():
 # 	print("Checking network status...")
 # 	proc = subprocess.Popen(["ping -c 2 www.google.com"], stdout = subprocess.PIPE, shell = True)
 # 	if "0% packet loss" in proc.stdout.read():
