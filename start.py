@@ -275,7 +275,7 @@ def comeback(option):
 	if option == "normal":
 		print("Analyzing directions...")
 		print("[Done]")
-		turnover(0)
+		status = turnover(0)
 		if status == 0:
 			while navix_directions[-1] != "end":
 				step = navix_directions.pop()
