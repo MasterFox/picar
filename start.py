@@ -299,11 +299,14 @@ def comeback(option):
 		print("[Error] Invalid option!")
 
 def netstat():
+	print("Checking network status...")
 	proc = subprocess.Popen(["ping -c 2 www.google.com"], stdout = subprocess.PIPE, shell = True)
 	if "0% packet loss" in proc.stdout.read():
 		picar_netstat = "online"
+		print("[Done] PiCar is online.")
 	else:
 		picar_netstat = "offline"
+		print("[Error] PiCar is offline.")
 
 
 #Open command interface
@@ -363,6 +366,9 @@ while command != "quit":
 		command = raw_input("?")
 	elif command == "clear directions":
 		comeback("clear")
+		command == raw_input("?")
+	elif command == "network status":
+		netstat()
 		command == raw_input("?")
 	else:
 		lumix("blink")
