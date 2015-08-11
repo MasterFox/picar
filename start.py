@@ -310,7 +310,7 @@ def netstat():
 command = raw_input("?")
 while command != "quit":
 	netstat()
-	sleep 2
+	time.sleep(2)
 	if picar_netstat == "online":
 		if command == "forwards":
 			forwards(1)
