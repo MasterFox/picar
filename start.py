@@ -311,6 +311,7 @@ def netstat():
 
 #Open command interface
 command = raw_input("?")
+
 while command != "quit":
 	print(command)
 	if command == "forwards":
