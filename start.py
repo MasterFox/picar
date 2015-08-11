@@ -261,15 +261,6 @@ def turnover():
 	time.sleep(1)
 	leftbackwards(1)
 	time.sleep(1)
-	rightforwards(1)
-	time.sleep(1)
-	leftbackwards(1)
-	time.sleep(1)
-	rightforwards(1)
-	time.sleep(1)
-	leftbackwards(1)
-	time.sleep(1)
-	rightforwards(1)
 	print("[Done]")
 
 def comeback():
