@@ -269,27 +269,21 @@ def comeback():
 	while navix_directions[-1] != "end":
 		step = navix_directions.pop()
 		if step == "forwards":
-			print(step)
 			forwards(1)
 			time.sleep(1)
 		elif step == "backwards":
-			print(step)
 			backwards(1)
 			time.sleep(1)
 		elif step == "left forwards":
-			print(step)
 			leftforwards(1)
 			time.sleep(1)
 		elif step == "right forwards":
-			print(step)
 			rightforwards(1)
 			time.sleep(1)
 		elif step == "left backwards":
-			print(step)
 			leftbackwards(1)
 			time.sleep(1)
 		elif step == "right backwards":
-			print(step)
 			rightbackwards(1)
 			time.sleep(1)
 		else:
