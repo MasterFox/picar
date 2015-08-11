@@ -266,8 +266,7 @@ def turnover():
 def comeback():
 	print(navix_directions)
 	turnover()
-	length = len(navix_directions)
-	while navix_directions(length) != "end":
+	while navix_directions(-1) != "end":
 		print(navix_directions)
 		step = navix_directions.pop()
 		if step == "forwards":
