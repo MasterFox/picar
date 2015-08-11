@@ -370,7 +370,7 @@ while command != "quit":
 		update()
 		break
 	elif command == "turn over":
-		turnover()
+		turnover(status)
 		command = raw_input("?")
 	elif command == "come back":
 		comeback("normal")
