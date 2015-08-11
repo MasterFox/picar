@@ -251,8 +251,6 @@ def update():
 
 def turnover():
 	print("Turning over...")
-	rightforwards(1)
-	time.sleep(1)
 	leftbackwards(1)
 	time.sleep(1)
 	rightforwards(1)
@@ -260,6 +258,9 @@ def turnover():
 	leftbackwards(1)
 	time.sleep(1)
 	rightforwards(1)
+	time.sleep(1)
+	leftbackwards(1)
+	time.sleep(1)
 	print("[Done]")
 
 def comeback(option):
