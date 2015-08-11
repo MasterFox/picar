@@ -298,70 +298,80 @@ def comeback(option):
 	else:
 		print("[Error] Invalid option!")
 
+def netstat():
+	proc = subprocess.Popen(["ping -c 2 www.google.com"], stdout = subprocess.PIPE, shell = True)
+	if "0% packet loss" in proc.stdout.read():
+		picar_netstat = "online"
+	else:
+		picar_netstat = "offline"
 
 
 #Open command interface
 command = raw_input("?")
 while command != "quit":
-	if command == "forwards":
-		forwards(1)
-		navix_directions.append("forwards")
-		command = raw_input("?")
-	elif command == "backwards":
-		backwards(1)
-		navix_directions.append("backwards")
-		command = raw_input("?")
-	elif command == "left forwards":
-		leftforwards(1)
-		navix_directions.append("right forwards")
-		command = raw_input("?")
-	elif command == "right forwards":
-		rightforwards(1)
-		navix_directions.append("left forwards")
-		command = raw_input("?")
-	elif command == "right backwards":
-		rightbackwards(1)
-		navix_directions.append("left backwards")
-		command = raw_input("?")
-	elif command == "left backwards":
-		leftbackwards(1)
-		navix_directions.append("right backwards")
-		command = raw_input("?")
-	elif command == "selftest":
-		selftest()
-		command = raw_input("?")
-	elif command == "help":
-		help()
-		command = raw_input("?")
-	elif command == "distance":
-		navix()
-		print navix_distance
-		command = raw_input("?")
-	elif command == "stealth":
-		lumix("stealth")
-		command = raw_input("?")
-	elif command == "light":
-		lumix("light")
-		command = raw_input ("?")
-	elif command == "auto":
-		auto()
-		command == raw_input("?")
-	elif command == "update":
-		update()
-		break
-	elif command == "turn over":
-		turnover()
-		command = raw_input("?")
-	elif command == "come back":
-		comeback("normal")
-		command = raw_input("?")
-	elif command == "clear directions":
-		comeback("clear")
-		command == raw_input("?")
+	if picar_netstat = "online":
+		if command == "forwards":
+			forwards(1)
+			navix_directions.append("forwards")
+			command = raw_input("?")
+		elif command == "backwards":
+			backwards(1)
+			navix_directions.append("backwards")
+			command = raw_input("?")
+		elif command == "left forwards":
+			leftforwards(1)
+			navix_directions.append("right forwards")
+			command = raw_input("?")
+		elif command == "right forwards":
+			rightforwards(1)
+			navix_directions.append("left forwards")
+			command = raw_input("?")
+		elif command == "right backwards":
+			rightbackwards(1)
+			navix_directions.append("left backwards")
+			command = raw_input("?")
+		elif command == "left backwards":
+			leftbackwards(1)
+			navix_directions.append("right backwards")
+			command = raw_input("?")
+		elif command == "selftest":
+			selftest()
+			command = raw_input("?")
+		elif command == "help":
+			help()
+			command = raw_input("?")
+		elif command == "distance":
+			navix()
+			print navix_distance
+			command = raw_input("?")
+		elif command == "stealth":
+			lumix("stealth")
+			command = raw_input("?")
+		elif command == "light":
+			lumix("light")
+			command = raw_input ("?")
+		elif command == "auto":
+			auto()
+			command == raw_input("?")
+		elif command == "update":
+			update()
+			break
+		elif command == "turn over":
+			turnover()
+			command = raw_input("?")
+		elif command == "come back":
+			comeback("normal")
+			command = raw_input("?")
+		elif command == "clear directions":
+			comeback("clear")
+			command == raw_input("?")
+		else:
+			lumix("blink")
+			print("Invalid input, try again")
+			command = raw_input("?")
 	else:
 		lumix("blink")
-		print("Invalid input, try again")
-		command = raw_input("?")
+		comeback("normal")
 
 print("Terminating PiCar...")
 print("[Done]")
