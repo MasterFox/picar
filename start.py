@@ -300,29 +300,31 @@ def comeback():
 	turnover()
 	i = 1
 	navix_reverse = navix_directions.reverse()
+	print navix_reverse
+	step = navix_reverse(i)
 	while navix_reverse(i) != "end":
-		print navix_reverse
-		if navix_reverse(i) == "forwards":
+	step = navix_reverse(i)
+		if step == "forwards":
 			forwards(1)
 			time.sleep(1)
 			i = i+1
-		elif navix_reverse(i) == "backwards":
+		elif step == "backwards":
 			backwards(1)
 			time.sleep(1)
 			i = i+1
-		elif navix_reverse(i) == "left forwards":
+		elif step == "left forwards":
 			leftforwards(1)
 			time.sleep(1)
 			i = i+1
-		elif navix_reverse(i) == "right forwards":
+		elif step == "right forwards":
 			rightforwards(1)
 			time.sleep(1)
 			i = i+1
-		elif navix_reverse(i) == "left backwards":
+		elif step == "left backwards":
 			leftbackwards(1)
 			time.sleep(1)
 			i = i+1
-		elif navix_reverse(i) == "right backwards":
+		elif step == "right backwards":
 			rightbackwards(1)
 			time.sleep(1)
 			i = i+1
