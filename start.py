@@ -255,7 +255,7 @@ def turnover(status):
 	navix()
 	if navix_distance < 70:
 		print("[Error] Not enough space!")
-		status = 1
+		return 1
 	else:
 		print("Turning over...")
 		leftbackwards(1)
@@ -268,14 +268,14 @@ def turnover(status):
 		time.sleep(1)
 		leftbackwards(1)
 		time.sleep(1)
-		status = 0
+		return 0
 		print("[Done]")
 
 def comeback(option):
 	if option == "normal":
 		print("Analyzing directions...")
 		print("[Done]")
-		turnover(status)
+		turnover(0)
 		if status == 0:
 			while navix_directions[-1] != "end":
 				step = navix_directions.pop()
@@ -371,7 +371,7 @@ while command != "quit":
 		update()
 		break
 	elif command == "turn over":
-		turnover(status)
+		turnover(1)
 		command = raw_input("?")
 	elif command == "come back":
 		comeback("normal")
