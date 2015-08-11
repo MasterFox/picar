@@ -264,7 +264,8 @@ def turnover():
 	print("[Done]")
 
 def comeback():
-	print(navix_directions)
+	print("Analyzing directions...")
+	print("[Done]")
 	turnover()
 	while navix_directions[-1] != "end":
 		step = navix_directions.pop()
