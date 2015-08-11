@@ -309,7 +309,7 @@ def netstat():
 #Open command interface
 command = raw_input("?")
 while command != "quit":
-	if picar_netstat = "online":
+	if picar_netstat == "online":
 		if command == "forwards":
 			forwards(1)
 			navix_directions.append("forwards")
