@@ -320,7 +320,7 @@ while command != "quit":
 	elif command == "left forwards":
 		leftforwards(1)
 		navix_directions.append("right forwards")
-				command = raw_input("?")
+		command = raw_input("?")
 	elif command == "right forwards":
 		rightforwards(1)
 		navix_directions.append("left forwards")
