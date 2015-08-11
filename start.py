@@ -303,7 +303,7 @@ def comeback(option):
 			print("[Error] The turnover function returned an error.")	
 	elif option == "clear":
 		print("Clearing directions...")
-		navix_directions.clear()
+		del navix_directions[:]
 		navix_directions.append("end")
 		print("[Done]")
 	else:
