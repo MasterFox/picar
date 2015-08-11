@@ -370,6 +370,7 @@ while command != "quit":
 		command == raw_input("?")
 	elif command == "network status":
 		netstat()
+		command = 0
 		command == raw_input("?")
 	else:
 		lumix("blink")
