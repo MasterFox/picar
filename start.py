@@ -296,7 +296,7 @@ def turnover():
 # 			pass
 
 def comeback():
-	print(navix_directions)
+	#print(navix_directions)
 	turnover()
 	i = 1
 	navix_reverse = navix_directions.reverse()
