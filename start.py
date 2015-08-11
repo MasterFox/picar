@@ -263,71 +263,35 @@ def turnover():
 	time.sleep(1)
 	print("[Done]")
 
-# def comeback():
-# 	print(navix_directions)
-# 	turnover()
-# 	while navix_directions.pop() != "end":
-# 		step = navix_directions.pop()
-# 		if step == "forwards":
-# 			print(step)
-# 			forwards(1)
-# 			time.sleep(1)
-# 		elif step == "backwards":
-# 			print(step)
-# 			backwards(1)
-# 			time.sleep(1)
-# 		elif step == "left forwards":
-# 			print(step)
-# 			leftforwards(1)
-# 			time.sleep(1)
-# 		elif step == "right forwards":
-# 			print(step)
-# 			rightforwards(1)
-# 			time.sleep(1)
-# 		elif step == "left backwards":
-# 			print(step)
-# 			leftbackwards(1)
-# 			time.sleep(1)
-# 		elif step == "right backwards":
-# 			print(step)
-# 			rightbackwards(1)
-# 			time.sleep(1)
-# 		else:
-# 			pass
-
 def comeback():
-	#print(navix_directions)
+	print(navix_directions)
 	turnover()
-	i = 1
-	navix_reverse = navix_directions.reverse()
-	print navix_reverse
-	step = navix_reverse.pop(i)
-	while navix_reverse.pop(i) != "end":
-		step = navix_reverse.pop(i)
+	while navix_directions.pop() != "end":
+		step = navix_directions.pop()
 		if step == "forwards":
+			print(step)
 			forwards(1)
 			time.sleep(1)
-			i = i+1
 		elif step == "backwards":
+			print(step)
 			backwards(1)
 			time.sleep(1)
-			i = i+1
 		elif step == "left forwards":
+			print(step)
 			leftforwards(1)
 			time.sleep(1)
-			i = i+1
 		elif step == "right forwards":
+			print(step)
 			rightforwards(1)
 			time.sleep(1)
-			i = i+1
 		elif step == "left backwards":
+			print(step)
 			leftbackwards(1)
 			time.sleep(1)
-			i = i+1
 		elif step == "right backwards":
+			print(step)
 			rightbackwards(1)
 			time.sleep(1)
-			i = i+1
 		else:
 			pass
 
