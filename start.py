@@ -59,6 +59,7 @@ GPIO.output(lighting, True)
 print("[Done]")
 print("Setting up NaviX Comeback...")
 navix_directions.append("end")
+status = 1
 print("[Done]")
 print
 #Check if started in stealth mode (will be included later; buggy!)
