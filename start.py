@@ -263,32 +263,41 @@ def turnover():
 	time.sleep(1)
 	print("[Done]")
 
-def comeback():
-	print("Analyzing directions...")
-	print("[Done]")
-	turnover()
-	while navix_directions[-1] != "end":
-		step = navix_directions.pop()
-		if step == "forwards":
-			forwards(1)
-			time.sleep(1)
-		elif step == "backwards":
-			backwards(1)
-			time.sleep(1)
-		elif step == "left forwards":
-			leftforwards(1)
-			time.sleep(1)
-		elif step == "right forwards":
-			rightforwards(1)
-			time.sleep(1)
-		elif step == "left backwards":
-			leftbackwards(1)
-			time.sleep(1)
-		elif step == "right backwards":
-			rightbackwards(1)
-			time.sleep(1)
-		else:
-			pass
+def comeback(option):
+	if option == "normal":
+		print("Analyzing directions...")
+		print("[Done]")
+		turnover()
+		while navix_directions[-1] != "end":
+			step = navix_directions.pop()
+			if step == "forwards":
+				forwards(1)
+				time.sleep(1)
+			elif step == "backwards":
+				backwards(1)
+				time.sleep(1)
+			elif step == "left forwards":
+				leftforwards(1)
+				time.sleep(1)
+			elif step == "right forwards":
+				rightforwards(1)
+				time.sleep(1)
+			elif step == "left backwards":
+				leftbackwards(1)
+				time.sleep(1)
+			elif step == "right backwards":
+				rightbackwards(1)
+				time.sleep(1)
+			else:
+				pass
+	elif option == "clear":
+		print("Clearing directions...")
+		navix_directions.clear()
+		navix_directions.append("end")
+		print("[Done]")
+	else:
+		print("[Error] Invalid option!")
+
 
 
 #Open command interface
@@ -344,8 +353,11 @@ while command != "quit":
 		turnover()
 		command = raw_input("?")
 	elif command == "come back":
-		comeback()
+		comeback("normal")
 		command = raw_input("?")
+	elif command == "clear directions":
+		comeback("clear")
+		command == raw_input("?")
 	else:
 		lumix("blink")
 		print("Invalid input, try again")
