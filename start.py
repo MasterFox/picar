@@ -146,6 +146,7 @@ def leftforwards(dur):
 	GPIO.output(motor2_a, True)
 	time.sleep(dur)
 	GPIO.output(motor1_a, False)
+	time.sleep(0.5)
 	GPIO.output(motor2_a, False)
 	
 
