@@ -268,8 +268,8 @@ def turnover(status):
 		time.sleep(1)
 		leftbackwards(1)
 		time.sleep(1)
-		print("[Done]")
 		status = 0
+		print("[Done]")
 
 def comeback(option):
 	if option == "normal":
