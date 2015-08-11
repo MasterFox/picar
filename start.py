@@ -302,8 +302,8 @@ def comeback():
 	navix_reverse = navix_directions.reverse()
 	print navix_reverse
 	step = navix_reverse(i)
-	while navix_reverse(i) != "end":
-		step = navix_reverse(i)
+	while navix_reverse(1) != "end":
+		step = navix_reverse(1)
 		if step == "forwards":
 			forwards(1)
 			time.sleep(1)
