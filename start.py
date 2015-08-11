@@ -249,47 +249,57 @@ def update():
 	proc = subprocess.Popen("./updater.sh")
 	print("Terminating PiCar. Please restart after updating process.")
 
-def turnover():
-	print("Turning over...")
-	leftbackwards(1)
-	time.sleep(1)
-	rightforwards(1)
-	time.sleep(1)
-	leftbackwards(1)
-	time.sleep(1)
-	rightforwards(1)
-	time.sleep(1)
-	leftbackwards(1)
-	time.sleep(1)
-	print("[Done]")
+def turnover(status):
+	print("Checking distance...")
+	navix()
+	if navix_distance < 70:
+		print("[Error] Not enough space!")
+		return 1
+	else:
+		print("Turning over...")
+		leftbackwards(1)
+		time.sleep(1)
+		rightforwards(1)
+		time.sleep(1)
+		leftbackwards(1)
+		time.sleep(1)
+		rightforwards(1)
+		time.sleep(1)
+		leftbackwards(1)
+		time.sleep(1)
+		print("[Done]")
+		return 0
 
 def comeback(option):
 	if option == "normal":
 		print("Analyzing directions...")
 		print("[Done]")
-		turnover()
-		while navix_directions[-1] != "end":
-			step = navix_directions.pop()
-			if step == "forwards":
-				forwards(1)
-				time.sleep(1)
-			elif step == "backwards":
-				backwards(1)
-				time.sleep(1)
-			elif step == "left forwards":
-				leftforwards(1)
-				time.sleep(1)
-			elif step == "right forwards":
-				rightforwards(1)
-				time.sleep(1)
-			elif step == "left backwards":
-				leftbackwards(1)
-				time.sleep(1)
-			elif step == "right backwards":
-				rightbackwards(1)
-				time.sleep(1)
-			else:
-				pass
+		turnover(status)
+		if status = 0:
+			while navix_directions[-1] != "end":
+				step = navix_directions.pop()
+				if step == "forwards":
+					forwards(1)
+					time.sleep(1)
+				elif step == "backwards":
+					backwards(1)
+					time.sleep(1)
+				elif step == "left forwards":
+					leftforwards(1)
+					time.sleep(1)
+				elif step == "right forwards":
+					rightforwards(1)
+					time.sleep(1)
+				elif step == "left backwards":
+					leftbackwards(1)
+					time.sleep(1)
+				elif step == "right backwards":
+					rightbackwards(1)
+					time.sleep(1)
+				else:
+					pass
+		else:
+			print("[Error] The turnover function returned an error.")	
 	elif option == "clear":
 		print("Clearing directions...")
 		navix_directions.clear()
@@ -370,7 +380,6 @@ while command != "quit":
 		command == raw_input("?")
 	elif command == "network status":
 		netstat()
-		command = 0
 		command == raw_input("?")
 	else:
 		lumix("blink")
