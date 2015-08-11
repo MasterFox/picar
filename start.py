@@ -309,6 +309,7 @@ def netstat():
 #Open command interface
 command = raw_input("?")
 while command != "quit":
+	netstat()
 	if picar_netstat == "online":
 		if command == "forwards":
 			forwards(1)
