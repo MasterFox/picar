@@ -30,6 +30,11 @@ After starting the program, you can use the following commands:
 + auto - activating autonomous drive
 + quit - quit the application
 + help - show command overview
++ update - starts update.sh
++ turn over - the car turns by 180°
++ come back - the car comes back to its starting point
++ clear directions - clears the cache of NaviX Comeback 
++ network status - checks if PiCar is online
 
 Autonomous drive
 ================
